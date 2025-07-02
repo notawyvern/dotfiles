@@ -21,7 +21,6 @@
 	};
 	};
 
-
   # enable trash for file managers
   services.gvfs.enable = true;
 
@@ -31,8 +30,7 @@
 
   programs.river = {
 	extraPackages =	with pkgs; [
-	/* wm controls
-	and gui */
+	# core for the wm
 	brightnessctl
 	wayshot
 	wlsunset
@@ -41,10 +39,13 @@
 	i3bar-river
 	i3status
 	
-	# basic apps 
+	# desktop apps
 	alacritty
 	cosmic-files
-	
+	cosmic-edit
+	qview
+	sioyek
+
 	# theming
 	adwaita-icon-theme
 	];
