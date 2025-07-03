@@ -23,7 +23,6 @@
 
 	(with pkgs-unstable; [
 		ruffle
-		retroarch-full
 		freetube
 ]);
 
@@ -37,6 +36,7 @@
  
   services.flatpak.enable = true;
 
+  # fixes portals in flatpak
   systemd.user.extraConfig = ''
 	DefaultEnvironment="PATH=/run/current-system/sw/bin"
 '';
@@ -55,6 +55,10 @@
 
   # enables flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Safer to leave value at the first install's version number. 
+  # Read docs before changing it ( eg. man configuration.nix )
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
  
