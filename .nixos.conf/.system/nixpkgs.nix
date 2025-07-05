@@ -24,6 +24,7 @@
 	(with pkgs-unstable; [
 		ruffle
 		freetube
+		harmony-music
 ]);
 
   /* disable the nscd service,
@@ -34,13 +35,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
  
-  services.flatpak.enable = true;
-
-  # fixes portals in flatpak
-  systemd.user.extraConfig = ''
-	DefaultEnvironment="PATH=/run/current-system/sw/bin"
-'';
-
   # Automatic updates
   system.autoUpgrade = {
 	enable = true;
