@@ -30,7 +30,9 @@
 	valid '.nix' desktops:
 	sway, river, cosmic, gnome, xfce, openbox, 
 	lxqt, lxqt-wayland, pantheon, cinnamon
+	Pick a browser '.nix' (firefox/chromium)
 	*/
+	./.desktop/browsers/firefox.nix
 	./.desktop/river.nix
 	];
     };
