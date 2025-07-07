@@ -39,12 +39,16 @@
   system.autoUpgrade = {
 	enable = true;
 	dates = "weekly";
+	flake = "path:/etc/nixos";
 	};
 
   # Automatic cleanup
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 10d";
+  nix.gc = {
+	automatic = true;
+  	dates = "daily";
+  	options = "--delete-older-than 10d";
+	};
+
   nix.settings.auto-optimise-store = true; 
 
   # enables flakes
