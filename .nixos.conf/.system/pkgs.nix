@@ -1,15 +1,31 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 {
 
-  users.users.crh = {
-	packages = with pkgs; [
+  users.users.crh.packages = 
+	(with pkgs; [
+		# core
 		vim
+		git
+		htop
 		efibootmgr
 		fastfetch
-		htop
-		git
-];
-};
+
+		# desktop apps
+		virtualboxKvm
+		vscodium-fhs
+		upscayl
+		localsend
+		haruna
+		qalculate-gtk
+		kdePackages.kolourpaint 
+])
+		++
+
+	(with pkgs-unstable; [
+		ruffle
+		retroarch-full
+		freetube
+]);
 
   /* disable the nscd service,
   aimed at servers and not desktops */

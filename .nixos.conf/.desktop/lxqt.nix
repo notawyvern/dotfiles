@@ -12,14 +12,17 @@
     environment.lxqt.excludePackages = with pkgs; [
 	lxqt.qterminal 
 	lxqt.qps
-	lxqt.lximage-qt
 ];	
 
     environment.systemPackages = with pkgs; [
-	# extras
+	# core for de
 	alacritty
 	redshift
 	nm-tray
+
+	# desktop apps
+	qpdfview
+	featherpad
   ];
 
      /* configure portals and avoid
