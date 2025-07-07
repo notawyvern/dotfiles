@@ -7,16 +7,32 @@
 
     let
 	system = "x86_64-linux";
-#	pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 	pkgs-unstable = import nixpkgs-unstable 
 		{inherit system; config.allowUnfree = true; };
     in {
 
-    # replace 'joes-desktop' with your hostname here.
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 	inherit system;
 	specialArgs = { inherit pkgs-unstable; };
-	modules = [ ./configuration.nix ];
+	modules = [ 
+	./hardware-configuration.nix
+
+	./.system/networking.nix
+	./.system/audio.nix
+	./.system/swap.nix
+	./.system/nixpkgs.nix
+		
+	./.core/boot.nix
+	./.core/users.nix
+	./.core/locale.nix
+	
+	/*
+	valid '.nix' desktops:
+	sway, river, cosmic, gnome, xfce, openbox, 
+	lxqt, lxqt-wayland, pantheon, cinnamon
+	*/
+	./.desktop/river.nix
+	];
     };
   };
 }
