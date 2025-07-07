@@ -25,9 +25,14 @@
 	featherpad
   ];
 
+     xdg.portal = {
+	enable = false;
+	lxqt.enable = false;
+	};
+	
      /* configure portals and avoid
      installation of wlr one */
-     xdg.portal = {
+     /*xdg.portal = {
 	lxqt.enable = true;
 	extraPortals = 
 		[ 
@@ -35,5 +40,5 @@
 		 ];
 		xdgOpenUsePortal = true;
 	};
-
+	*/
 }
