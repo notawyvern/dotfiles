@@ -40,7 +40,6 @@
 	i3status
 	
 	# desktop apps
-	alacritty
 	cosmic-files
 	cosmic-edit
 	qview

@@ -4,7 +4,6 @@
   users.users.crh.packages = 
 	(with pkgs; [
 		# core
-		vim
 		git
 		htop
 		efibootmgr
@@ -46,7 +45,7 @@
   nix.gc = {
 	automatic = true;
   	dates = "daily";
-  	options = "--delete-older-than 10d";
+  	options = "--delete-older-than 8d";
 	};
 
   nix.settings.auto-optimise-store = true; 
