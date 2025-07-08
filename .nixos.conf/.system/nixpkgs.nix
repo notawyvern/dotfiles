@@ -31,6 +31,9 @@
   services.nscd.enable = false;
   system.nssModules = lib.mkForce [];
 
+  # disable nano
+  programs.nano.enable = false;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
  
