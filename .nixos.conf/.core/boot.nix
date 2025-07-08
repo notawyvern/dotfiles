@@ -1,9 +1,15 @@
 { config, pkgs, ...}:
 {
 	# Bootloader.
-        boot.loader.systemd-boot = {
+        boot.loader.limine = {
           enable = true;
-          editor = false;
+          style = {
+            wallpapers = [];
+            graphicalTerminal = {
+              background = "000000";
+              foreground = "ffffff";
+            };
+          };
         };
 
 	boot.loader.efi.canTouchEfiVariables = true;
