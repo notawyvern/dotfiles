@@ -1,36 +1,13 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, lib, pkgs, ... }:
 {
-
-  users.users.crh.packages = 
-	(with pkgs; [
-		# core
-		vim
-		git
-		htop
-		efibootmgr
-		fastfetch
-
-		# desktop apps
-		virtualboxKvm
-		vscodium-fhs
-		upscayl
-		localsend
-		haruna
-		qalculate-gtk
-		kdePackages.kolourpaint 
-])
-		++
-
-	(with pkgs-unstable; [
-		ruffle
-		freetube
-		harmony-music
-]);
 
   /* disable the nscd service,
   aimed at servers and not desktops */
   services.nscd.enable = false;
   system.nssModules = lib.mkForce [];
+
+  # disable nano
+  programs.nano.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -46,7 +23,7 @@
   nix.gc = {
 	automatic = true;
   	dates = "daily";
-  	options = "--delete-older-than 10d";
+  	options = "--delete-older-than 8d";
 	};
 
   nix.settings.auto-optimise-store = true; 
