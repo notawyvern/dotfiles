@@ -43,6 +43,6 @@
 		};
 		};
 
-	environment.systemPackages = [ pkgs.chromium ];
+  users.users."crh".packages = [ pkgs.chromium ];
 	
 }
