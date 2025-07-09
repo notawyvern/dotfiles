@@ -20,8 +20,7 @@
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = 
-          { inherit pkgs-unstable; };
+       # specialArgs = { inherit pkgs-unstable; };
 
         modules = [
 	./hardware-configuration.nix
@@ -29,24 +28,26 @@
 	./.system/networking.nix
 	./.system/audio.nix
 	./.system/swap.nix
-	./.system/nixpkgs.nix
+	./.system/pkgmgr.nix
         
 	./.core/boot.nix
 	./.core/users.nix
 	./.core/locale.nix
-	
-	./.home/browsers/firefox.nix
+
+        ./.desktop/loginmgr.nix
+	./.desktop/browsers/firefox.nix
 
 	home-manager.nixosModules.home-manager {
 
 	home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
         /* modules sourced within the home.nix dotfile
         include the wayland compositor and general
         configurations declared */
-        home-manager.users.crh = import ./.home/home.nix;
-        
+        home-manager.users.crh = import ./.desktop/home-manager/home.nix;
+
         }
         ];
         };
