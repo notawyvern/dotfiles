@@ -25,14 +25,14 @@
         modules = [
 	./hardware-configuration.nix
 
-	./.system/networking.nix
-	./.system/audio.nix
-	./.system/swap.nix
-	./.system/pkgmgr.nix
+	./.system/extra/networking.nix
+	./.system/extra/audio.nix
+	./.system/extra/locale.nix
+	./.system/extra/swap.nix
         
-	./.core/boot.nix
-	./.core/users.nix
-	./.core/locale.nix
+	./.system/core/boot.nix
+	./.system/core/users.nix
+	./.system/core/pkgmgr.nix
 
         ./.desktop/loginmgr.nix
 	./.desktop/browsers/firefox.nix

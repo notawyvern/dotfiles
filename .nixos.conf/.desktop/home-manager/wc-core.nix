@@ -12,7 +12,7 @@
       border-width = 0;
       outline-width = 0;
       horizontal = true;
-      prompt-text = " ";
+      prompt-text = ''" "'';
       padding-top = "5%";
       hide-cursor = true;
       result-spacing = 15;
