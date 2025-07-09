@@ -7,11 +7,13 @@
   };
 
   imports = [ 
-    ./cli.nix 
+    ./cmdline.nix 
     ./wc-core.nix 
 
-    # window manager
-    ./river.nix
+    /* window manager plus
+    packages for the desktop */
+    ./userpkgs.nix
+    ../river.nix
   ];
 
   # enables home manager
