@@ -4,7 +4,6 @@
   users.users.crh.packages = 
 	(with pkgs; [
 		# core
-		git
 		htop
 		efibootmgr
 		fastfetch
@@ -16,15 +15,52 @@
 		localsend
 		haruna
 		qalculate-gtk
-		kdePackages.kolourpaint 
-])
+                kdePackages.kolourpaint 
+                cosmic-files
+	        cosmic-edit
+	        qview
+	        sioyek
+
+	        # core for river wc
+	        brightnessctl
+	        wayshot
+	        wlsunset
+	        swaybg
+	
+	        # theming
+	        adwaita-icon-theme
+	
+              ])
 		++
 
 	(with pkgs-unstable; [
 		ruffle
 		freetube
 		harmony-music
-]);
+              ]);
+
+  /* install the login manager for all users
+  (including root & greetd, so it works) */
+  environment.systemPackages =
+  with pkgs; [ greetd.gtkgreet cage ];
+
+  services.greetd = {
+	enable = true;
+	restart = true;
+	vt = 7;
+	settings = {
+	default_session = {
+		command = ''
+		cage -d -s -- gtkgreet -c river
+		'';
+	};
+	};
+	};
+
+  # enable trash for file managers
+  services.gvfs.enable = true;
+
+  fonts.packages = with pkgs; [ nerd-fonts.departure-mono ];
 
   /* disable the nscd service,
   aimed at servers and not desktops */

@@ -6,7 +6,13 @@
     homeDirectory = "/home/crh";
   };
 
-  imports = [ ./cli.nix ./gui.nix ];
+  imports = [ 
+    ./cli.nix 
+    ./wc-core.nix 
+
+    # window manager
+    ./river.nix
+  ];
 
   # enables home manager
   programs.home-manager.enable = true;
