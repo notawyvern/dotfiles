@@ -8,12 +8,12 @@
 
   imports = [ 
     ./cmdline.nix 
-    ./wc-core.nix 
+    ./userpkgs.nix
 
     /* window manager plus
     packages for the desktop */
-    ./userpkgs.nix
     ../river.nix
+    ./river-utils.nix 
   ];
 
   # enables home manager
