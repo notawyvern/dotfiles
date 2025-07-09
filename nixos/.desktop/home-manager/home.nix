@@ -6,7 +6,15 @@
     homeDirectory = "/home/crh";
   };
 
-  imports = [ ./cli.nix ./gui.nix ];
+  imports = [ 
+    ./cmdline.nix 
+    ./userpkgs.nix
+
+    /* window manager plus
+    packages for the desktop */
+    ../river.nix
+    ./river-utils.nix 
+  ];
 
   # enables home manager
   programs.home-manager.enable = true;

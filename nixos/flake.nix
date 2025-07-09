@@ -20,38 +20,34 @@
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = 
-          { inherit pkgs-unstable; };
+       # specialArgs = { inherit pkgs-unstable; };
 
         modules = [
 	./hardware-configuration.nix
 
-	./.system/networking.nix
-	./.system/audio.nix
-	./.system/swap.nix
-	./.system/nixpkgs.nix
+	./.system/extra/networking.nix
+	./.system/extra/audio.nix
+	./.system/extra/locale.nix
+	./.system/extra/swap.nix
         
-	./.core/boot.nix
-	./.core/users.nix
-	./.core/locale.nix
+	./.system/core/boot.nix
+	./.system/core/users.nix
+	./.system/core/pkgmgr.nix
 
-	/*
-	valid '.nix' desktops:
-	sway, river, cosmic, gnome, xfce, openbox, 
-	lxqt, lxqt-wayland, pantheon, cinnamon
-	Pick a browser '.nix' (firefox/chromium)
-	*/
+        ./.desktop/loginmgr.nix
 	./.desktop/browsers/firefox.nix
-        ./.desktop/river.nix
 
 	home-manager.nixosModules.home-manager {
 
 	home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
-        # modules are sourced within the home.nix dotfile
-        home-manager.users.crh = import ./.home/home.nix;
-        
+        /* modules sourced within the home.nix dotfile
+        include the wayland compositor and general
+        configurations declared */
+        home-manager.users.crh = import ./.desktop/home-manager/home.nix;
+
         }
         ];
         };
