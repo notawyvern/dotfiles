@@ -34,22 +34,17 @@
 	./.core/boot.nix
 	./.core/users.nix
 	./.core/locale.nix
-
-	/*
-	valid '.nix' desktops:
-	sway, river, cosmic, gnome, xfce, openbox, 
-	lxqt, lxqt-wayland, pantheon, cinnamon
-	Pick a browser '.nix' (firefox/chromium)
-	*/
-	./.desktop/browsers/firefox.nix
-        ./.desktop/river.nix
+	
+	./.home/browsers/firefox.nix
 
 	home-manager.nixosModules.home-manager {
 
 	home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         
-        # modules are sourced within the home.nix dotfile
+        /* modules sourced within the home.nix dotfile
+        include the wayland compositor and general
+        configurations declared */
         home-manager.users.crh = import ./.home/home.nix;
         
         }
