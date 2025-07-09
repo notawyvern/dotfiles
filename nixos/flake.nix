@@ -25,17 +25,17 @@
         modules = [
 	./hardware-configuration.nix
 
-	./.system/extra/networking.nix
-	./.system/extra/audio.nix
-	./.system/extra/locale.nix
-	./.system/extra/swap.nix
+	./system/extra/networking.nix
+	./system/extra/audio.nix
+	./system/extra/locale.nix
+	./system/extra/swap.nix
         
-	./.system/core/boot.nix
-	./.system/core/users.nix
-	./.system/core/pkgmgr.nix
+	./system/core/boot.nix
+	./system/core/users.nix
+	./system/core/pkgmgr.nix
 
-        ./.desktop/loginmgr.nix
-	./.desktop/browsers/firefox.nix
+        ./desktop/loginmgr.nix
+	./desktop/firefox.nix
 
 	home-manager.nixosModules.home-manager {
 
@@ -46,7 +46,7 @@
         /* modules sourced within the home.nix dotfile
         include the wayland compositor and general
         configurations declared */
-        home-manager.users.crh = import ./.desktop/home-manager/home.nix;
+        home-manager.users.crh = import ./desktop/home-manager/home.nix;
 
         }
         ];
