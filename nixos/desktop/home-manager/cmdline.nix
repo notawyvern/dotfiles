@@ -12,7 +12,10 @@
   programs.bash = {
 	enable = true;
         enableCompletion = true;
-
+        sessionVariables = {
+          EDITOR = "vim";
+          VISUAL = "$EDITOR";
+        };
     # set some aliases, feel free to add more or remove some
 	shellAliases = {
 		neofetch = "fastfetch";
@@ -20,8 +23,7 @@
 		dir = "dir --color=auto";
 		};
 	bashrcExtra =
-          ''
-        export EDITOR="vim"
+        ''
 	set -o vi
 	bind -m vi-command 'Control-l: clear-screen'
 	bind -m vi-insert 'Control-l: clear-screen'
