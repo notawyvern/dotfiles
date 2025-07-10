@@ -1,17 +1,13 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
-  home = {
-    packages =
+  home.packages =
       (with pkgs; [
-        # core
-        htop
+        # command line
         efibootmgr
-        fastfetch
 
         # desktop apps
         virtualboxKvm
-        vscodium-fhs
         upscayl
         localsend
         haruna
@@ -20,7 +16,6 @@
         cosmic-files
         cosmic-edit
         qview
-        sioyek
 
         # core for river wc
         brightnessctl
@@ -35,10 +30,9 @@
           ++
   
       (with pkgs-unstable; [
+        # more desktop apps
         ruffle
-        freetube
         harmony-music
       ]);
 
-    };
 }

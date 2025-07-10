@@ -13,15 +13,12 @@
 
     let
 	system = "x86_64-linux";
-        pkgs = nixpkgs.legacyPackages.${system};
 	pkgs-unstable = import nixpkgs-unstable 
 		{inherit system; config.allowUnfree = true;};
     in {
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-       # specialArgs = { inherit pkgs-unstable; };
-
         modules = [
 	./hardware-configuration.nix
 
@@ -34,8 +31,8 @@
 	./system/core/users.nix
 	./system/core/pkgmgr.nix
 
-        ./desktop/loginmgr.nix
-	./desktop/firefox.nix
+  ./desktop/loginmgr.nix
+  ./desktop/firefox.nix
 
 	home-manager.nixosModules.home-manager {
 

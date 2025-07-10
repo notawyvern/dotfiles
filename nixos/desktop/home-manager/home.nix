@@ -7,13 +7,16 @@
   };
 
   imports = [ 
-    ./cmdline.nix 
+    /* gui and cli .nix enables (installs) packages
+    and configures them in the homedir */
+    ./conf.d/cli.nix 
+    ./conf.d/gui.nix
     ./userpkgs.nix
 
     /* window manager plus
     packages for the desktop */
     ../river.nix
-    ./river-utils.nix 
+    ./conf.d/river-core.nix 
   ];
 
   # enables home manager
