@@ -10,7 +10,6 @@
 
         # desktop apps
         virtualboxKvm
-        vscodium-fhs
         upscayl
         localsend
         haruna
