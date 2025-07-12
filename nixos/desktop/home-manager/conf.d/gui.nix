@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   programs.sioyek = {
@@ -28,6 +28,25 @@
         primary.foreground = "#ffffff";
         primary.background = "#000000";	
       };
+    };
+  };
+  
+  programs.freetube = {
+    enable = true;
+    package = pkgs-unstable.freetube;
+    settings = {
+      autoplayVideos = false;
+      hideLiveChat = true;
+      hidePopularVideos = true;
+      hideRecommendedVideos = true;
+      hideSubscriptionShorts = true;
+      hideTrendingVideos = true;
+      checkForUpdates = false;
+      playNextVideo = false;
+      useDeArrowTitles = true;
+      useDeArrowThumbnails = true;
+      useRssFeeds = true;
+      useSponsorBlock = true;
     };
   };
 

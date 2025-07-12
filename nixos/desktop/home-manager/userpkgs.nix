@@ -34,7 +34,6 @@
   
       (with pkgs-unstable; [
         ruffle
-        freetube
         harmony-music
       ]);
 
