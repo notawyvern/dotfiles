@@ -61,7 +61,6 @@
         ms-ceintl.vscode-language-pack-pt-br
       ];
       userSettings = { 
-        "locale" = "pt-BR";
         "git.autofetch" = true; 
         "workbench.colorTheme" = "Default Light Modern";
       };
