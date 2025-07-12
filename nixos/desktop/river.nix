@@ -91,12 +91,12 @@
       default-layout = "rivertile";
       rule-add = {
         "-title" = {
-          "'Qalculate'" = "float";
+          "'Qalculate!'" = "float";
         };
       };
       spawn = [
         "i3bar-river"
-        "'swaybg -i ~/Imagens/magical-land-japan.jpg'"
+        "'swaybg -i ~/Imagens/wallpapers/magical-land-japan.jpg'"
         "'wlsunset -T 6100 -t 2800 -l -20.351 -L -40.289'"
       ];
     };

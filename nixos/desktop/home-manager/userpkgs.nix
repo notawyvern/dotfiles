@@ -5,7 +5,6 @@
     packages =
       (with pkgs; [
         # core
-        htop
         efibootmgr
         fastfetch
 
@@ -20,7 +19,6 @@
         cosmic-files
         cosmic-edit
         qview
-        sioyek
 
         # core for river wc
         brightnessctl
