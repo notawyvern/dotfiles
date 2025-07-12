@@ -50,4 +50,22 @@
     };
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium-fhs;
+    profiles.default = { 
+      enableExtensionUpdateCheck = true;
+      extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        github.vscode-pull-request-github
+        ms-ceintl.vscode-language-pack-pt-br
+      ];
+      userSettings = { 
+        "locale" = "pt-BR";
+        "git.autofetch" = true; 
+        "workbench.colorTheme" = "Default Light Modern";
+      };
+    };
+  };
+
 }
