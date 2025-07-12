@@ -16,7 +16,7 @@
     /* window manager plus
     packages for the desktop */
     ../river.nix
-    ./conf.d/river-utils.nix 
+    ./conf.d/river-core.nix 
   ];
 
   # enables home manager
