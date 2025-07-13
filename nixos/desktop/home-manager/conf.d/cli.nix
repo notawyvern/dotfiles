@@ -9,6 +9,22 @@
     };
   };
 
+  programs.fastfetch = {
+    enable = true;
+    settings = {
+      modules = [
+        "title" "separator" "os" "host" "bios"
+        "wm" "uptime" "shell"
+      
+        { type = "kernel"; format = "{release}"; }
+        { type = "display"; compactType = "original";
+          key = "Resolução"; }
+
+        "cpu" "gpu" "break" "colors"
+      ];
+    };
+  };
+
   programs.htop = {
     enable = true;
     settings = {
