@@ -58,7 +58,6 @@
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         github.vscode-pull-request-github
-        ms-ceintl.vscode-language-pack-pt-br
       ];
       userSettings = { 
         "git.autofetch" = true; 
