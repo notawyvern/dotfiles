@@ -1,12 +1,10 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
-  home = {
-    packages =
+  home.packages =
       (with pkgs; [
-        # core
+        # command line
         efibootmgr
-        fastfetch
 
         # desktop apps
         virtualboxKvm
@@ -32,9 +30,9 @@
           ++
   
       (with pkgs-unstable; [
+        # more desktop apps
         ruffle
         harmony-music
       ]);
 
-    };
 }

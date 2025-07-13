@@ -11,9 +11,8 @@
 	vt = 7;
 	settings = {
 	default_session = {
-		command = ''
-		cage -d -s -- gtkgreet -c river
-		'';
+		command =
+                ''cage -d -s -- gtkgreet -c river'';
 	};
 	};
 	};
