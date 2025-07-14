@@ -59,15 +59,23 @@
 		# Check about:support for extension/add-on ID strings.
 		# Valid strings for installation_mode are "allowed", "blocked",
 		# "force_installed" and "normal_installed".
-		ExtensionSettings = {
-			
+                ExtensionSettings = {
+                        "*".installation_mode = "blocked"; # block extensions not declared
+
 			# uBlock Origin:
 			"uBlock0@raymondhill.net" = {
 				install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
 				installation_mode = "force_installed";
 				private_browsing = true;
 				blocked = false;
-				};
+                              };
+                        # Portuguese Brazilian dictionary
+                        "pt-BR@dictionaries.addons.mozilla.org" = {
+                                install_url = "https://addons.mozilla.org/firefox/downloads/latest/corretor/latest.xpi";
+                                installation_mode = "force_installed";
+                                blocked = false;
+                              };
+
 		};
         	};
 		};

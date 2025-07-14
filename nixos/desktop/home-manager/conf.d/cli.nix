@@ -13,14 +13,9 @@
     enable = true;
     settings = {
       modules = [
-        "title" "separator" "os" "host" "bios"
-        "wm" "uptime" "shell"
-      
-        { type = "kernel"; format = "{release}"; }
-        { type = "display"; compactType = "original";
-          key = "Resolução"; }
-
-        "cpu" "gpu" "break" "colors"
+        "title" "separator" "os" "host" "wm" "lm"
+        "terminal" "bios" "locale" "uptime" "shell" 
+        "kernel" "cpu" "gpu" "break" "colors"
       ];
     };
   };

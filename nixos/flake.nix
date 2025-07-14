@@ -30,9 +30,9 @@
 	./system/core/boot.nix
 	./system/core/users.nix
 	./system/core/pkgmgr.nix
-
-  ./desktop/loginmgr.nix
-  ./desktop/firefox.nix
+        
+        ./desktop/loginmgr.nix
+        ./desktop/firefox.nix
 
 	home-manager.nixosModules.home-manager {
 
