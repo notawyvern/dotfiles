@@ -41,17 +41,17 @@
         home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
         home-manager.users.crh.imports = [
-          ./desktop/home-manager/home.nix # create dotfiles + installs pkgs
+        ./desktop/home-manager/home.nix # create dotfiles + installs pkgs
 
-          ./desktop/home-manager/river.d/river-core.nix
-          ./desktop/home-manager/river.d/river.nix
+        ./desktop/home-manager/river.d/river-core.nix
+        ./desktop/home-manager/river.d/river.nix
 
-          /* unlike in home.nix, declarations thoroughly
-          configure all apps from files below */
-          ./desktop/home-manager/apps.d/cli.nix
-          ./desktop/home-manager/apps.d/gui.nix
+        /* unlike in home.nix, declarations thoroughly
+        configure all apps from files below */
+        ./desktop/home-manager/apps.d/cli.nix
+        ./desktop/home-manager/apps.d/gui.nix
+
         ];
-
         }
         ];
         };
