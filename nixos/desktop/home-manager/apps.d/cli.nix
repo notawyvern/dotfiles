@@ -1,14 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
-  xdg.desktopEntries = {
-    gvim = {
-      name = "gvim";
-      noDisplay = true;
-    };
-  };
-
   programs.fastfetch = {
     enable = true;
     settings = {

@@ -92,6 +92,7 @@
       rule-add = {
         "-title" = {
           "'Qalculate!'" = "float";
+          "'qView'" = "float";
         };
       };
       spawn = [
