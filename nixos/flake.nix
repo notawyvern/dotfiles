@@ -40,15 +40,14 @@
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
-        /* modules sourced within the home.nix dotfile
-        include the wayland compositor and general
-        configurations declared */
         home-manager.users.crh.imports = [
-          ./desktop/home-manager/home.nix
+          ./desktop/home-manager/home.nix # enable home manager + install packages
 
           ./desktop/home-manager/river.d/river-core.nix
           ./desktop/home-manager/river.d/river.nix
 
+          /* unlike in home.nix, declarations thoroughly
+          configure all apps from files below */
           ./desktop/home-manager/apps.d/cli.nix
           ./desktop/home-manager/apps.d/gui.nix
         ];
