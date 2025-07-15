@@ -37,11 +37,28 @@
         harmony-music
       ]);
     };
-  
-  xdg.desktopEntries = {
-    gvim = {
-      name = "gvim";
-      noDisplay = true;
+    
+  xdg = {
+    desktopEntries = {
+      gvim = {
+        name = "gvim";
+        noDisplay = true;
+      };
+    };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "image/jpeg" = "com.interversehq.qView.desktop";
+        "image/png" = "com.interversehq.qView.desktop";
+      };
+      associations.added = {
+        "image/jpeg" = "com.interversehq.qView.desktop";
+        "image/png" = "com.interversehq.qView.desktop";
+      };
+      associations.removed = {
+        "image/jpeg" = "org.kde.kolourpaint.desktop";
+        "image/png" = "org.kde.kolourpaint.desktop";
+      };
     };
   };
 
