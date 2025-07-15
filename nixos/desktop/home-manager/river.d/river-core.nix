@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 {
-
-  # dmenu alternative (tofi)
+  # menu to run programs
   programs.tofi = {
     enable = true;
     settings = {
@@ -23,6 +22,15 @@
       selection-color = "#0088cc";
       background-color = "#000A";
     };
+  };
+
+  # night light color temperature
+  services.wlsunset = {
+    enable = true;
+    sunset = "17:30";
+    sunrise = "5:00";
+    temperature.day = 6500;
+    temperature.night = 2800;
   };
 
   # bar for river
