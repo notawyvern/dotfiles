@@ -43,7 +43,15 @@
         /* modules sourced within the home.nix dotfile
         include the wayland compositor and general
         configurations declared */
-        home-manager.users.crh = import ./desktop/home-manager/home.nix;
+        home-manager.users.crh.imports = [
+          ./desktop/home-manager/home.nix
+
+          ./desktop/home-manager/river.d/river-core.nix
+          ./desktop/home-manager/river.d/river.nix
+
+          ./desktop/home-manager/apps.d/cli.nix
+          ./desktop/home-manager/apps.d/gui.nix
+        ];
 
         }
         ];
