@@ -1,23 +1,43 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   home = {
     username = "crh";
     homeDirectory = "/home/crh";
+    packages =
+      (with pkgs; [
+        # command line
+        efibootmgr
+
+        # desktop apps
+        virtualboxKvm
+        upscayl
+        localsend
+        haruna
+        qalculate-gtk
+        kdePackages.kolourpaint 
+        cosmic-files
+        cosmic-edit
+        qview
+
+        # core for river wc
+        brightnessctl
+        wayshot
+        wlsunset
+        swaybg
+	
+        # theming
+        adwaita-icon-theme
+        nerd-fonts.departure-mono 
+      ])
+          ++
+  
+      (with pkgs-unstable; [
+        # more desktop apps
+        ruffle
+        harmony-music
+      ]);
   };
-
-  imports = [ 
-    /* gui and cli .nix enables (installs) packages
-    and configures them in the homedir */
-    ./conf.d/cli.nix 
-    ./conf.d/gui.nix
-    ./userpkgs.nix
-
-    /* window manager plus
-    packages for the desktop */
-    ../river.nix
-    ./conf.d/river-core.nix 
-  ];
 
   # enables home manager
   programs.home-manager.enable = true;
