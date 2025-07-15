@@ -40,9 +40,6 @@
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
-        /* modules sourced within the home.nix dotfile
-        include the wayland compositor and general
-        configurations declared */
         home-manager.users.crh.imports = [
           ./desktop/home-manager/home.nix
 
