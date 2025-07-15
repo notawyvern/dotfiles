@@ -41,7 +41,7 @@
         home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
         home-manager.users.crh.imports = [
-          ./desktop/home-manager/home.nix # enable home manager + install packages
+          ./desktop/home-manager/home.nix # create dotfiles + installs pkgs
 
           ./desktop/home-manager/river.d/river-core.nix
           ./desktop/home-manager/river.d/river.nix
