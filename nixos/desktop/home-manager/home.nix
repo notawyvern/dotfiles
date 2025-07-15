@@ -36,6 +36,13 @@
         ruffle
         harmony-music
       ]);
+    };
+  
+  xdg.desktopEntries = {
+    gvim = {
+      name = "gvim";
+      noDisplay = true;
+    };
   };
 
   # enables home manager

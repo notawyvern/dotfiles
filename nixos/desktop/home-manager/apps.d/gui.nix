@@ -43,6 +43,7 @@
       hideChannelShorts = true;
       hideTrendingVideos = true;
       checkForUpdates = false;
+      checkForBlogPosts = false;
       playNextVideo = false;
       useDeArrowTitles = true;
       useDeArrowThumbnails = true;
