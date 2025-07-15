@@ -23,7 +23,7 @@
         # core for river wc
         brightnessctl
         wayshot
-        wlsunset
+#        wlsunset
         swaybg
 	
         # theming
