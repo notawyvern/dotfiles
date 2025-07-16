@@ -36,6 +36,7 @@
     package = pkgs-unstable.freetube;
     settings = {
       autoplayVideos = false;
+      hideHeaderLogo = true;
       hideLiveChat = true;
       hidePopularVideos = true;
       hideRecommendedVideos = true;
