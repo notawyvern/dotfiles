@@ -22,9 +22,6 @@
         brightnessctl
         wayshot
         swaybg
-	
-        # theming
-        nerd-fonts.departure-mono 
       ])
           ++
   
