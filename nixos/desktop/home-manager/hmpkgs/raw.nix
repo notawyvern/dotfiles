@@ -24,7 +24,6 @@
         swaybg
 	
         # theming
-        adwaita-icon-theme
         nerd-fonts.departure-mono 
       ])
           ++
