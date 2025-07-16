@@ -42,7 +42,8 @@
         
         home-manager.users.crh.imports = [
         ./desktop/home-manager/home.nix # create dotfiles + enable HM
-
+        
+        ./desktop/home-manager/river/look.nix
         ./desktop/home-manager/river/river-core.nix
         ./desktop/home-manager/river/river.nix
 
