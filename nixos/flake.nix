@@ -43,14 +43,14 @@
         home-manager.users.crh.imports = [
         ./desktop/home-manager/home.nix # create dotfiles + enable HM
 
-        ./desktop/home-manager/river.d/river-core.nix
-        ./desktop/home-manager/river.d/river.nix
+        ./desktop/home-manager/river/river-core.nix
+        ./desktop/home-manager/river/river.nix
 
         /* raw doesn't declare configurations 
         of apps, unlike the other two */
-        ./desktop/home-manager/apps.d/raw.nix
-        ./desktop/home-manager/apps.d/cli.nix
-        ./desktop/home-manager/apps.d/gui.nix
+        ./desktop/home-manager/hmpkgs/raw.nix
+        ./desktop/home-manager/hmpkgs/cli.nix
+        ./desktop/home-manager/hmpkgs/gui.nix
 
         ];
         }
