@@ -35,18 +35,19 @@
           VISUAL = "$EDITOR";
         };
     # set some aliases, feel free to add more or remove some
-	shellAliases = {
-		neofetch = "fastfetch";
-		vdir = "vdir --color=auto";
-		dir = "dir --color=auto";
-		};
-	bashrcExtra =
-        ''
-	set -o vi
-	bind -m vi-command 'Control-l: clear-screen'
-	bind -m vi-insert 'Control-l: clear-screen'
-	'';	
-      };
+    shellAliases = {
+      sudoedit = "sudo -e";
+      neofetch = "fastfetch";
+      vdir = "vdir --color=auto";
+      dir = "dir --color=auto";
+    };
+    bashrcExtra =
+      ''
+      set -o vi
+      bind -m vi-command 'Control-l: clear-screen'
+      bind -m vi-insert 'Control-l: clear-screen'
+      '';	
+  };
   
   programs.vim = {
     enable = true;

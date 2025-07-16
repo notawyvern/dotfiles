@@ -4,9 +4,6 @@
   home = {
     packages =
       (with pkgs; [
-        # command line
-        efibootmgr
-
         # desktop apps
         virtualboxKvm
         upscayl
@@ -16,23 +13,18 @@
         kdePackages.kolourpaint 
         cosmic-files
         cosmic-edit
-        qview
 
         # core for river wc
         brightnessctl
         wayshot
         swaybg
-	
-        # theming
-        adwaita-icon-theme
-        nerd-fonts.departure-mono 
       ])
           ++
   
       (with pkgs-unstable; [
         # more desktop apps
         ruffle
-        harmony-music
+        muffon
       ]);
     };
 }

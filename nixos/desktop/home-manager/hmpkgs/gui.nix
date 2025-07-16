@@ -9,7 +9,9 @@
       "ui_font" = "DepartureMono Nerd Font";
     };
     bindings = {
-     toggle_dark_mode = "<C-i>";
+      toggle_dark_mode = "<C-i>";
+      next_page = "J";
+      previous_page = "K";
     };
 
   };
@@ -30,16 +32,36 @@
       };
     };
   };
+
+  programs.swayimg = {
+    enable = true;
+    settings = {
+      "keys.viewer" = {
+        h = "prev_file";
+        l = "next_file";
+      };
+      general = {
+        mode = "viewer";
+        size = "900,700";
+      };
+      list = {
+        recursive = "yes";
+        all = "yes";
+      };
+      font.name = "JetBrainsMono Nerd Font";
+    };
+  };
   
   programs.freetube = {
     enable = true;
     package = pkgs-unstable.freetube;
     settings = {
       autoplayVideos = false;
+      hideHeaderLogo = true;
       hideLiveChat = true;
       hidePopularVideos = true;
       hideRecommendedVideos = true;
-      hideSubscriptionShorts = true;
+      hideSubscriptionsShorts = true;
       hideChannelShorts = true;
       hideTrendingVideos = true;
       checkForUpdates = false;
