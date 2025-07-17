@@ -17,7 +17,7 @@
     enable = true;
     dates = "weekly";
     flake = "path:/etc/nixos";
-    flags = [ "--commit-lock-file" ];
+    flags = [ "--recreate-lock-file" ];
   };
 
   # Automatic cleanup
