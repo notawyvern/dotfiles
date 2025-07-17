@@ -14,10 +14,11 @@
  
   # Automatic updates
   system.autoUpgrade = {
-	enable = true;
-	dates = "weekly";
-	flake = "path:/etc/nixos";
-	};
+    enable = true;
+    dates = "weekly";
+    flake = "path:/etc/nixos";
+    flags = [ "--commit-lock-file" ];
+  };
 
   # Automatic cleanup
   nix.gc = {
