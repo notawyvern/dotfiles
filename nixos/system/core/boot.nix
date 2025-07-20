@@ -1,16 +1,15 @@
 { config, pkgs, ...}:
 {
-	# Bootloader.
-        boot.loader.limine = {
-          enable = true;
-          style = {
-            wallpapers = [];
-            graphicalTerminal = {
-              background = "000000";
-              foreground = "ffffff";
-            };
-          };
-        };
-
+  # Bootloader.
+  boot.loader.limine = {
+    enable = true;
+    style = {
+      wallpapers = [];
+      graphicalTerminal = {
+        background = "000000";
+        foreground = "ffffff";
+      };
+    };
+  };
 }
 

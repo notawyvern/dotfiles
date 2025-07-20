@@ -4,8 +4,10 @@
   home = {
     packages =
       (with pkgs; [
-        # command line
-        efibootmgr
+        # core for river wc
+        brightnessctl
+        wayshot
+        swaybg
 
         # desktop apps
         virtualboxKvm
@@ -18,15 +20,10 @@
         cosmic-edit
         qview
 
-        # core for river wc
-        brightnessctl
-        wayshot
-        swaybg
       ])
           ++
   
       (with pkgs-unstable; [
-        # more desktop apps
         ruffle
         harmony-music
       ]);
