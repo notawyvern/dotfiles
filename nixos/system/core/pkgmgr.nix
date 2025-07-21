@@ -11,21 +11,28 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Automatic updates + upgrades
+  systemd.services.flake-update = {
+    path = with pkgs; [ nix ];
+    script = 
+      ''nix flake update --flake /etc/nixos'';
+    wantedBy = [ "nixos-upgrade.service" ];
+    before = [ "nixos-upgrade.service" ];
+  };
  
-  # Automatic updates
   system.autoUpgrade = {
     enable = true;
-    dates = "weekly";
     flake = "path:/etc/nixos";
-    flags = [ "--recreate-lock-file" ];
+    dates = "weekly";
   };
 
   # Automatic cleanup
   nix.gc = {
-	automatic = true;
-  	dates = "daily";
-  	options = "--delete-older-than 8d";
-	};
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 8d";
+  };
 
   nix.settings.auto-optimise-store = true; 
 
