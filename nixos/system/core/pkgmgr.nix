@@ -11,13 +11,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
- 
-  # Automatic cleanup
-  nix.gc = {
-	automatic = true;
-  	dates = "daily";
-  	options = "--delete-older-than 8d";
-	};
 
   nix.settings.auto-optimise-store = true; 
 
