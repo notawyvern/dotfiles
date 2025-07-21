@@ -12,14 +12,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
  
-  # Automatic updates
-  system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
-    flake = "path:/etc/nixos";
-    flags = [ "--recreate-lock-file" ];
-  };
-
   # Automatic cleanup
   nix.gc = {
 	automatic = true;
