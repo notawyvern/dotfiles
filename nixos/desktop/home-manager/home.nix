@@ -8,6 +8,15 @@
     
   xdg = {
     desktopEntries = {
+      htop = {
+        name = "Htop";
+        exec = "alacritty -e htop";
+        terminal = false;
+      };
+      vim = {
+        name = "Vim";
+        noDisplay = true;
+      };
       gvim = {
         name = "gvim";
         noDisplay = true;
