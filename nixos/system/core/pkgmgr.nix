@@ -19,6 +19,7 @@
       ''nix flake update --flake /etc/nixos'';
     wantedBy = [ "nixos-upgrade.service" ];
     before = [ "nixos-upgrade.service" ];
+    after = [ "NetworkManager.service" ];
   };
  
   system.autoUpgrade = {
