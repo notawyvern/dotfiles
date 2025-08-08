@@ -40,7 +40,7 @@
       hideLiveChat = true;
       hidePopularVideos = true;
       hideRecommendedVideos = true;
-      hideSubscriptionShorts = true;
+      hideSubscriptionsShorts = true;
       hideChannelShorts = true;
       hideTrendingVideos = true;
       checkForUpdates = false;
