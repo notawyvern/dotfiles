@@ -15,10 +15,12 @@
     };
 
     file = {
-      "Imagens/wallpapers/magical-land-japan.jpg".source =
-        pkgs.fetchurl { 
-          url = "https://raw.githubusercontent.com/notawyvern/wallpapers/refs/heads/main/magical-land-japan.jpg";
-          sha256 = "658bbab1a59e8f53e96b25687b04a073a50814ea72ea5d50da0fb90690775cc4";
+      "Imagens/".source =
+        pkgs.fetchFromGitHub {
+          owner = "notawyvern";
+          repo = "wallpapers";
+          rev = "60dd8a4756713224f86755b23d72e1abe7e2fb6d";
+          sha256 = "sha256-lExSL1ytMMPupWSDx5oxxwiCiK1eFlvnLhWoI89cWLY=";
         };
     };
   };
