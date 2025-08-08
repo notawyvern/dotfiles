@@ -15,10 +15,10 @@
     };
 
     file = {
-      "Imagens/wallpapers/wallpaper.jpeg".source =
+      "Imagens/wallpapers/magical-land-japan.jpg".source =
         pkgs.fetchurl { 
-          url = "https://i.imgur.com/WdoW1BX.jpeg";
-          sha256 = "ea8f8a05aea7db9de07bd485b1ffab5cdcb031dc6daef3f524de9c49728f9511";
+          url = "https://raw.githubusercontent.com/notawyvern/wallpapers/refs/heads/main/magical-land-japan.jpg";
+          sha256 = "658bbab1a59e8f53e96b25687b04a073a50814ea72ea5d50da0fb90690775cc4";
         };
     };
   };
