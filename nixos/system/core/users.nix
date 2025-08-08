@@ -8,9 +8,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  security.sudo = {
-    enable = true;
-    execWheelOnly = true;
+  security = {
+    sudo.enable = false;
+    sudo-rs.enable = true;
   };
 }
  
