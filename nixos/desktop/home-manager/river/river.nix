@@ -97,7 +97,7 @@
       };
       spawn = [
         "i3bar-river"
-        "'swaybg -i ~/Imagens/wallpapers/magical-land-japan.jpg'"
+        "'swaybg -i ~/Imagens/wallpapers/wallpaper.jpeg'"
       ];
     };
     extraConfig =
