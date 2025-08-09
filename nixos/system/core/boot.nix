@@ -1,10 +1,9 @@
-{ config, pkgs, ...}:
+{ config, pkgs, bootloader, ...}:
 {
   # Bootloader.
   boot.loader.limine = {
     enable = true;
-    additionalFiles =
-      { "/boot/efi/boot/SIGN.EFI" = "/boot/efi/boot/BOOTX64.EFI"; };
+    package = bootloader.limine;
     style = {
       wallpapers = [];
       graphicalTerminal = {
