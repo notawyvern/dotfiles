@@ -3,7 +3,8 @@
   # Bootloader.
   boot.loader.limine = {
     enable = true;
-    package = bootloader.limine;
+    additionalFiles =
+      { "/boot/efi/boot/SIGN.EFI" = "${bootloader.limine}/share/limine/BOOTX64.EFI"; };
     style = {
       wallpapers = [];
       graphicalTerminal = {
