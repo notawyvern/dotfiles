@@ -15,7 +15,6 @@
     };
 
     file = {
-#      "Imagens/".source =
       "Imagens/wallpapers/".source =
         pkgs.fetchFromGitHub {
           owner = "notawyvern";
