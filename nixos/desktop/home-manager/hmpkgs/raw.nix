@@ -28,7 +28,7 @@
       (with pkgs-unstable; [
         # more desktop apps
         ruffle
-        harmony-music
+        muffon
       ]);
     };
 }
