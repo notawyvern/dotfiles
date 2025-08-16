@@ -35,6 +35,7 @@
     enable = true;
     package = pkgs-unstable.freetube;
     settings = {
+      defaultVideoFormat = "legacy";
       autoplayVideos = false;
       hideHeaderLogo = true;
       hideLiveChat = true;
