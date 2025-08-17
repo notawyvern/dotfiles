@@ -25,7 +25,7 @@
   
       (with pkgs-unstable; [
         ruffle
-        harmony-music
+        muffon
       ]);
     };
 }
