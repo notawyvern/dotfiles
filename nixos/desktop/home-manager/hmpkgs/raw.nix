@@ -13,7 +13,7 @@
         virtualboxKvm
         upscayl
         localsend
-        haruna
+        vlc
         qalculate-gtk
         kdePackages.kolourpaint 
         cosmic-files
