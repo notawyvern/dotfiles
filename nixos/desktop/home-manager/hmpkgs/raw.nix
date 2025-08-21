@@ -4,9 +4,6 @@
   home = {
     packages =
       (with pkgs; [
-        # command line
-        efibootmgr
-
         # desktop apps
         virtualboxKvm
         upscayl
@@ -16,7 +13,6 @@
         kdePackages.kolourpaint 
         cosmic-files
         cosmic-edit
-        qview
 
         # core for river wc
         brightnessctl
