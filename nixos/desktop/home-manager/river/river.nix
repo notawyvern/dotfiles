@@ -26,9 +26,9 @@
           "None XF86AudioMute" = "spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
 
           # video
-          "None XF86MonBrightnessUp" = "spawn 'brightnessctl set +5%'";
-          "None XF86MonBrightnessDown" = "spawn 'brightnessctl set 5%-'";
-          "None Print" = "spawn 'wayshot -c -e jpg'";
+          "None XF86MonBrightnessUp" = "spawn '${pkgs.brightnessctl}/bin/brightnessctl set +5%'";
+          "None XF86MonBrightnessDown" = "spawn '${pkgs.brightnessctl}/bin/brightnessctl set 5%-'";
+          "None Print" = "spawn '${pkgs.wayshot}/bin/wayshot -c -e jpg'";
 
           # wm basics
 
@@ -97,7 +97,7 @@
       };
       spawn = [
         "i3bar-river"
-        "'swaybg -i ~/Imagens/wallpapers/magical-land-japan.jpg'"
+        "'${pkgs.swaybg}/bin/swaybg -i ~/Imagens/wallpapers/magical-land-japan.jpg'"
       ];
     };
     extraConfig =
