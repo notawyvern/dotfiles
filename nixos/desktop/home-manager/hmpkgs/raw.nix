@@ -4,11 +4,6 @@
   home = {
     packages =
       (with pkgs; [
-        # core for river wc
-        brightnessctl
-        wayshot
-        swaybg
-
         # desktop apps
         virtualboxKvm
         upscayl
