@@ -90,10 +90,8 @@
 
       default-layout = "rivertile";
       rule-add = {
-        "-title" = {
-          "'Qalculate!'" = "float";
-          "'qView'" = "float";
-        };
+        "-title"."'Qalculate!'" = "float";
+        "-app-id"."'swayimg'" = "float";
       };
       spawn = [
         "i3bar-river"
