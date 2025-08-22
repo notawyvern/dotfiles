@@ -13,7 +13,6 @@
         kdePackages.kolourpaint 
         cosmic-files
         cosmic-edit
-        qview
 
       ])
           ++

@@ -30,6 +30,25 @@
       };
     };
   };
+
+  programs.swayimg = {
+    enable = true;
+    settings = {
+      "keys.viewer" = {
+        h = "prev_file";
+        l = "next_file";
+      };
+      general = {
+        mode = "viewer";
+        size = "900,700";
+      };
+      list = {
+        recursive = "yes";
+        all = "yes";
+      };
+      font.name = "JetBrainsMono Nerd Font";
+    };
+  };
   
   programs.freetube = {
     enable = true;
