@@ -9,7 +9,9 @@
       "ui_font" = "DepartureMono Nerd Font";
     };
     bindings = {
-     toggle_dark_mode = "<C-i>";
+      toggle_dark_mode = "<C-i>";
+      next_page = "J";
+      previous_page = "K";
     };
 
   };
