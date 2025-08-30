@@ -56,6 +56,7 @@
     enable = true;
     enableDefault = false;
     general = {
+      separator = "";
       output_format = "i3bar";
       colors = true;
       interval = 5;
@@ -75,6 +76,7 @@
         position = 2;
         settings = {
           format = "%status %percentage";
+          format_down = "";
           last_full_capacity = true;
           integer_battery_capacity = true;
           low_threshold = 40;
@@ -87,8 +89,8 @@
       "volume master" = {
         position = 3;
         settings = {
-          format = " 󰝚 %volume ";
-          format_muted = " 󰝛 %volume ";
+          format = " 󰝚 %volume";
+          format_muted = " 󰝛 %volume";
           device = "default";
           mixer = "Master";
           mixer_idx = 0;
@@ -97,7 +99,7 @@
       "tztime localdate" = {
         position = 4;
         settings = {
-          format = "  %d/%m/%Y ";
+          format = "  %d/%m/%Y";
         };
       };
       "tztime localtime" = {
