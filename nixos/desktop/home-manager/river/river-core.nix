@@ -56,6 +56,7 @@
     enable = true;
     enableDefault = false;
     general = {
+      separator = "";
       output_format = "i3bar";
       colors = true;
       interval = 5;
