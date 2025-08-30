@@ -75,6 +75,7 @@
         position = 2;
         settings = {
           format = "%status %percentage";
+          format_down = "";
           last_full_capacity = true;
           integer_battery_capacity = true;
           low_threshold = 40;
