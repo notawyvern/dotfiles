@@ -19,6 +19,9 @@
       ''nix flake update --flake /etc/nixos'';
     wantedBy = [ "nixos-upgrade.service" ];
     before = [ "nixos-upgrade.service" ];
+
+    # guarantees the system is online
+    wants = [ "network-online.target" ];
     after = [ "network-online.target" ];
   };
  
