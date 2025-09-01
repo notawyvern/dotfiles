@@ -9,7 +9,6 @@
 
   # Enable network manager
   networking.networkmanager.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false; 
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
