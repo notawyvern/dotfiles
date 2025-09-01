@@ -11,8 +11,20 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Automatic updates + upgrades
+  systemd.services.flake-update = {
+    path = with pkgs; [ nix ];
+    script = 
+      ''nix flake update --flake /etc/nixos'';
+    wantedBy = [ "nixos-upgrade.service" ];
+    before = [ "nixos-upgrade.service" ];
+
+    # guarantees the system is online
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
+  };
  
-  # Automatic updates
   system.autoUpgrade = {
 	enable = true;
 	dates = "weekly";
