@@ -49,9 +49,13 @@
 
       Preferences = {
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+        
         # enables and enforces containers
         "privacy.userContext.enabled" = { Value = true; Status = "locked"; };
         "privacy.userContext.ui.enabled" = { Value = true; Status = "locked"; };
+
+        # disable chatbot menu on left click
+        "browser.ml.chat.menu" = { Value = false; Status = "locked"; };
       };
 
       /* ---- EXTENSIONS ---- */
