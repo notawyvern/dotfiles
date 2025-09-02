@@ -59,12 +59,6 @@
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
         "browser.startup.homepage" = { Value = "https://start.duckduckgo.com"; Status = "locked"; };
 
-        "widget.wayland.opaque-region.enabled" = { Value = true; Status = "locked"; };
-
-        # enables and enforces containers
-        "privacy.userContext.enabled" = { Value = true; Status = "locked"; };
-        "privacy.userContext.ui.enabled" = { Value = true; Status = "locked"; };
-
         # disable chatbot menu on left click
         "browser.ml.chat.menu" = { Value = false; Status = "locked"; };
 
