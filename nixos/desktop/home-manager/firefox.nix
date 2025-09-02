@@ -1,10 +1,18 @@
-{ config, pkgs, ... }:
-
-{
-
-  programs.firefox = {
-    enable = true;
+{ config, pkgs, ... }: 
+{ 
+  programs.firefox = { 
+    enable = true; 
     languagePacks = [ "pt-BR" ];
+    profiles."default" = {
+      isDefault = true;
+      userChrome = builtins.readFile
+        (pkgs.fetchFromGitHub {
+          owner = "Dook97";
+          repo = "firefox-qutebrowser-userchrome";
+          rev = "7045b7bd819e9513188dc60346b973293b0ccf1c";
+          sha256 = "sha256-KVVmgnaBu4x9aD93AeKKqlbdlj2cnL1bZqGt3Woj2hE=";
+        } + "/userChrome.css"); 
+      };
     
     /* ---- POLICIES ---- */
     # Check about:policies#documentation for options.
@@ -20,7 +28,7 @@
       };
       DNSOverHTTPS = {
         Enabled = true;
-        ProviderURL = "https://dns11.quad9.net/dns-query";
+        ProviderURL = "https://cloudflare-dns.com/dns-query";
         Fallback = false;
         Locked = true;
       };
@@ -49,13 +57,19 @@
 
       Preferences = {
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-        
+        "browser.startup.homepage" = { Value = "https://start.duckduckgo.com"; Status = "locked"; };
+
+        "widget.wayland.opaque-region.enabled" = { Value = true; Status = "locked"; };
+
         # enables and enforces containers
         "privacy.userContext.enabled" = { Value = true; Status = "locked"; };
         "privacy.userContext.ui.enabled" = { Value = true; Status = "locked"; };
 
         # disable chatbot menu on left click
         "browser.ml.chat.menu" = { Value = false; Status = "locked"; };
+
+        # allow userChrome.css to be read
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = { Value = true; Status = "locked"; };
       };
 
       /* ---- EXTENSIONS ---- */
@@ -65,6 +79,23 @@
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # block extensions not declared
 
+        # Vimium:
+/*        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi";
+          installation_mode = "force_installed";
+          private_browsing = true;
+          blocked = false;
+        };
+        */
+
+        # tridactyl:
+        "tridactyl.vim@cmcaine.co.uk" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tridactyl-vim/latest.xpi";
+          installation_mode = "force_installed";
+          private_browsing = true;
+          blocked = false;
+        };
+
         # uBlock Origin:
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
@@ -73,7 +104,7 @@
           blocked = false;
         };
         
-        # Portuguese Brazilian dictionary
+        # Portuguese Brazilian dictionary:
         "pt-BR@dictionaries.addons.mozilla.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/corretor/latest.xpi";
           installation_mode = "force_installed";
