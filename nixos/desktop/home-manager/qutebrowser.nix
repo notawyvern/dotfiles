@@ -11,13 +11,16 @@
       content.blocking.adblock.lists = [
         "https://easylist.to/easylist/easylist.txt"
         "https://easylist.to/easylist/easyprivacy.txt"
-        "https://pgl.yoyo.org/adservers/serverlist.php"
+        "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
         "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
         "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
+        "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
+        "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt"
+        "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt"
       ];
     };
     searchEngines = {
