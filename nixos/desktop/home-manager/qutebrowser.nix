@@ -23,7 +23,7 @@
     searchEngines = {
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
-      leta = "https://leta.mullvad.net/search?q={}";
+      gg = "https://leta.mullvad.net/search?q={}&engine=google";
     };
     quickmarks = {
       # fun
