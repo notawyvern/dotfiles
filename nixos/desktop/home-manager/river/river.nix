@@ -17,7 +17,7 @@
         normal = {
           # basic custom
           "Super T" = "spawn alacritty";
-          "Super B" = "spawn firefox";
+          "Super B" = "spawn qutebrowser";
           "Super D" = "spawn tofi-drun";
 
           # audio
