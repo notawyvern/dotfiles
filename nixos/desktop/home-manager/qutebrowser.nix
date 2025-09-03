@@ -4,6 +4,7 @@
     enable = true; 
     settings = {
       tabs.show = "multiple";
+      content.headers.accept_language = "pt-BR,pt;q=0.9";
       
       fonts.default_family = "DepartureMono Nerd Font";
       fonts.default_size = "13pt";
