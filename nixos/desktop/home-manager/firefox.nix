@@ -58,7 +58,7 @@
 
       Preferences = {
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-        "browser.startup.homepage" = { Value = "moz-extension://59b7ba83-e9f1-4d55-83d7-c3d29c327c4f/static/newtab.html"; Status = "locked"; };
+        "browser.startup.homepage" = { Value = "https://start.duckduckgo.com/"; Status = "locked"; };
 
         # enables and enforces containers
         "privacy.userContext.enabled" = { Value = true; Status = "locked"; };
@@ -77,15 +77,6 @@
       # "force_installed" and "normal_installed".
       ExtensionSettings = {
         "*".installation_mode = "blocked"; # block extensions not declared
-
-        # Vimium:
-/*        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi";
-          installation_mode = "force_installed";
-          private_browsing = true;
-          blocked = false;
-        };
-        */
 
         # tridactyl:
         "tridactyl.vim@cmcaine.co.uk" = {
