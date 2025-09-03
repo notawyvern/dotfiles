@@ -7,10 +7,10 @@
       isDefault = true;
       userChrome = 
         ''@import "${pkgs.fetchFromGitHub {
-          owner = "Dook97";
+          owner = "notawyvern";
           repo = "firefox-qutebrowser-userchrome";
-          rev = "7045b7bd819e9513188dc60346b973293b0ccf1c";
-          sha256 = "sha256-KVVmgnaBu4x9aD93AeKKqlbdlj2cnL1bZqGt3Woj2hE=";
+          rev = "8f3d989089d1e0ec28008cef5aeb21b5dfa2b59c";
+          sha256 = "sha256-0CG4JUCzLrUJK+21GCLGodKbHOFa7Tt1OF9ao2FLsSA=";
           }}/userChrome.css";
         '';
       };
