@@ -5,13 +5,14 @@
     languagePacks = [ "pt-BR" ];
     profiles."default" = {
       isDefault = true;
-      userChrome = builtins.readFile
-        (pkgs.fetchFromGitHub {
+      userChrome = 
+        ''@import "${pkgs.fetchFromGitHub {
           owner = "Dook97";
           repo = "firefox-qutebrowser-userchrome";
           rev = "7045b7bd819e9513188dc60346b973293b0ccf1c";
           sha256 = "sha256-KVVmgnaBu4x9aD93AeKKqlbdlj2cnL1bZqGt3Woj2hE=";
-        } + "/userChrome.css"); 
+          }}/userChrome.css";
+        '';
       };
     
     /* ---- POLICIES ---- */
