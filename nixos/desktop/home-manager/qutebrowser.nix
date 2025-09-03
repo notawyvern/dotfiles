@@ -30,7 +30,7 @@
       anibunker = "https://anibunker.com/";
       betteranime = "https://betteranime.net/";
       anroll = "https://www.anroll.net/";
-      mal = "https://myanimelist.net/";
+      mal = "https://myanimelist.net/animelist/weeabotaku";
       mangafire = "https://mangafire.to/";
 
       # utils
