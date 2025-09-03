@@ -32,7 +32,6 @@
         ./system/core/pkgmgr.nix
         
         ./desktop/loginmgr.nix
-#        ./desktop/firefox.nix
 
         home-manager.nixosModules.home-manager {
 
@@ -42,7 +41,7 @@
         
           home-manager.users.crh.imports = [
             ./desktop/home-manager/home.nix # create dotfiles + enable HM
-            ./desktop/home-manager/firefox.nix
+            ./desktop/home-manager/qutebrowser.nix
         
             ./desktop/home-manager/river/look.nix
             ./desktop/home-manager/river/river-core.nix

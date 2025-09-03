@@ -13,18 +13,6 @@
         exec = "alacritty -e htop";
         terminal = false;
       };
-      firefox = {
-        name = "hckrfox";
-        exec = "firefox --name firefox %U";
-        mimeType = [ 
-          "text/html" 
-          "text/xml" 
-          "application/xhtml+xml"
-          "application/vnd.mozilla.xul+xml"
-          "x-scheme-handler/http" 
-          "x-scheme-handler/https" 
-        ];
-      };
       vim = {
         name = "Vim";
         noDisplay = true;
