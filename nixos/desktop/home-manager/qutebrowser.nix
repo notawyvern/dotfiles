@@ -18,9 +18,6 @@
         "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
         "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
-        "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
-        "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt"
-        "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt"
       ];
     };
     searchEngines = {
