@@ -58,7 +58,7 @@
 
       Preferences = {
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-        "browser.startup.homepage" = { Value = "https://start.duckduckgo.com"; Status = "locked"; };
+        "browser.startup.homepage" = { Value = "moz-extension://59b7ba83-e9f1-4d55-83d7-c3d29c327c4f/static/newtab.html"; Status = "locked"; };
 
         # enables and enforces containers
         "privacy.userContext.enabled" = { Value = true; Status = "locked"; };
