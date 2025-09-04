@@ -19,6 +19,7 @@
         "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
         "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
+        "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts"
       ];
     };
     searchEngines = {
