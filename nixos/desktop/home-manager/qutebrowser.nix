@@ -12,6 +12,7 @@
       content.blocking.adblock.lists = [
         "https://easylist.to/easylist/easylist.txt"
         "https://easylist.to/easylist/easyprivacy.txt"
+        "https://easylist-downloads.adblockplus.org/easylistportuguese.txt"
         "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
