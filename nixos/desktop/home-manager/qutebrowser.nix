@@ -33,7 +33,6 @@
       # fun
       anibunker = "https://anibunker.com/";
       betteranime = "https://betteranime.net/";
-      anroll = "https://www.anroll.net/";
       mal = "https://myanimelist.net/animelist/weeabotaku";
       mangafire = "https://mangafire.to/";
 
@@ -43,6 +42,7 @@
       annaarchive = "https://annas-archive.li/";
       YOPmail = "https://yopmail.com/en/";
       chatgpt = "https://duck.ai/";
+      mynixos = "https://mynixos.com/";
       meet = "https://meet.jit.si/";
 
       # personal
