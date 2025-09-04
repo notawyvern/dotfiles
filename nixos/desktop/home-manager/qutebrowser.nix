@@ -22,9 +22,11 @@
       ];
     };
     searchEngines = {
+      w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
       gg = "https://leta.mullvad.net/search?q={}&engine=google";
+      brave = "https://search.brave.com/search?q={}";
     };
     quickmarks = {
       # fun
