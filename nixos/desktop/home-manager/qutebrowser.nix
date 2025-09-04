@@ -45,7 +45,7 @@
       # personal
       facul-uni-estacio = "https://estudante.estacio.br/login";
       github = "https://github.com/";
-      mail = "https://account.proton.me/mail";
+      email = "https://account.proton.me/mail";
       simplelogin = "https://app.simplelogin.io/auth/login";
       drive = "https://account.proton.me/drive";
     };
