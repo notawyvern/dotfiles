@@ -10,16 +10,28 @@
       fonts.default_size = "13pt";
 
       content.blocking.adblock.lists = [
+        # basics
         "https://easylist.to/easylist/easylist.txt"
         "https://easylist.to/easylist/easyprivacy.txt"
         "https://easylist-downloads.adblockplus.org/easylistportuguese.txt"
+
+        # coin-mining
+        "https://zerodot1.gitlab.io/CoinBlockerLists/list.txt"
+        "https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/list_browser.txt"
+        "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
+
+        # spam/ads
+        "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
+        "https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts"
+        "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
+        "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
         "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
-        "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
-        "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
-        "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
-        "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
+
+        # mainly malware
+        "https://someonewhocares.org/hosts/zero/hosts"
+        "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts"
       ];
     };
