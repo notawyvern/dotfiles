@@ -15,11 +15,6 @@
         "https://easylist.to/easylist/easyprivacy.txt"
         "https://easylist-downloads.adblockplus.org/easylistportuguese.txt"
 
-        # coin-mining
-        "https://zerodot1.gitlab.io/CoinBlockerLists/list.txt"
-        "https://gitlab.com/ZeroDot1/CoinBlockerLists/-/raw/master/list_browser.txt"
-        "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
-
         # spam/ads
         "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
         "https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts"
@@ -28,8 +23,11 @@
         "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
+        "https://raw.githubusercontent.com/pishangujeniya/layman-adlist/refs/heads/main/layman_adlist_hosts.txt"
 
-        # mainly malware
+        # malware
+        "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
+        "https://raw.githubusercontent.com/DandelionSprout/adfilt/refs/heads/master/Dandelion%20Sprout's%20Anti-Malware%20List.txt"
         "https://someonewhocares.org/hosts/zero/hosts"
         "https://raw.githubusercontent.com/bongochong/CombinedPrivacyBlockLists/master/MiniLists/cpbl-abp-mini.txt"
         "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts"
