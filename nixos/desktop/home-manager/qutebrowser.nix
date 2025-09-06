@@ -23,7 +23,9 @@
         "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
-        "https://raw.githubusercontent.com/pishangujeniya/layman-adlist/refs/heads/main/layman_adlist_hosts.txt"
+        "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+        "https://block.energized.pro/ultimate/formats/hosts.txt"
+        "https://adaway.org/hosts.txt"
 
         # malware
         "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
