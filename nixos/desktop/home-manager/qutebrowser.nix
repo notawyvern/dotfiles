@@ -3,11 +3,16 @@
   programs.qutebrowser = { 
     enable = true; 
     settings = {
-      tabs.show = "multiple";
-      content.headers.accept_language = "pt-BR,pt;q=0.9";
       
+      # ui
+      tabs.show = "multiple";
+      url.default_page = "about:blank";
+      url.start_pages = "about:blank";
       fonts.default_family = "DepartureMono Nerd Font";
       fonts.default_size = "13pt";
+
+      # general
+      content.headers.accept_language = "pt-BR,pt;q=0.9";
 
       content.blocking.adblock.lists = [
         # basics
