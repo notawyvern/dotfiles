@@ -6,8 +6,8 @@
       
       # ui
       tabs.show = "multiple";
-      url.default_page = "about:blank";
-      url.start_pages = "about:blank";
+      url.default_page = "qute://bookmarks/";
+      url.start_pages = "qute://bookmarks/";
       fonts.default_family = "DepartureMono Nerd Font";
       fonts.default_size = "13pt";
 
@@ -41,11 +41,12 @@
       ];
     };
     searchEngines = {
+      DEFAULT = "https://search.brave.com/search?q={}";
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
       gg = "https://leta.mullvad.net/search?q={}&engine=google";
-      brave = "https://search.brave.com/search?q={}";
+      ddg = "https://duckduckgo.com/?q={}";
     };
     quickmarks = {
       # fun
