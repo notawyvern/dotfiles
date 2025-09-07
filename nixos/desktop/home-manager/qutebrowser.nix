@@ -25,7 +25,7 @@
         "https://raw.githubusercontent.com/Yhonay/antipopads/master/hosts"
         "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
         "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
-        "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
+        "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=0&mimetype=plaintext"
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
         "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
