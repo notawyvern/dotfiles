@@ -6,8 +6,8 @@
       
       # ui
       tabs.show = "multiple";
-      url.default_page = "qute://bookmarks/";
-      url.start_pages = "qute://bookmarks/";
+      url.default_page = "https://html.duckduckgo.com/";
+      url.start_pages = "https://html.duckduckgo.com/";
       fonts.default_family = "DepartureMono Nerd Font";
       fonts.default_size = "13pt";
 
@@ -41,7 +41,8 @@
       ];
     };
     searchEngines = {
-      DEFAULT = "https://search.brave.com/search?q={}";
+      DEFAULT = "https://html.duckduckgo.com/html/?q={}";
+      brave = "https://search.brave.com/search?q={}";
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
