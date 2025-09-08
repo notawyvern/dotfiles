@@ -26,10 +26,10 @@
   };
  
   system.autoUpgrade = {
-	enable = true;
-	dates = "weekly";
-	flake = "path:/etc/nixos";
-	};
+    enable = true;
+    flake = "path:/etc/nixos";
+    dates = "weekly";
+  };
 
   # Automatic cleanup
   nix.gc = {
