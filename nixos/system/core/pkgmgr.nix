@@ -27,6 +27,7 @@
  
   system.autoUpgrade = {
     enable = true;
+    operation = "boot";
     flake = "path:/etc/nixos";
     dates = "weekly";
   };
