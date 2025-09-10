@@ -33,8 +33,8 @@
         "image/png" = "swayimg.desktop";
       };
       associations.removed = {
-        "image/jpeg" = "org.kde.kolourpaint.desktop";
-        "image/png" = "org.kde.kolourpaint.desktop";
+        "image/png" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
+        "image/jpeg" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
       };
     };
   };
