@@ -95,7 +95,7 @@
       };
       spawn = [
         "i3bar-river"
-        "'${pkgs.swaybg}/bin/swaybg -i ~/.wallpapers/magical-land-japan.jpg'"
+        "'${pkgs.swaybg}/bin/swaybg -i ~/.wallpapers/elf-woman-in-the-forest.jpg'"
       ];
     };
     extraConfig =

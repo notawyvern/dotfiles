@@ -19,8 +19,8 @@
         pkgs.fetchFromGitHub {
           owner = "notawyvern";
           repo = "wallpapers";
-          rev = "0df11e2c99c96f04978d56a880967e4c92942493";
-          sha256 = "sha256-51Gl73wRNCiAD6P5j+RYjiwTbSbYVG6wbYBxmxU0ZSM=";
+          rev = "660ebd644b09e514bbc8c3649f6784f6c083a1dd";
+          sha256 = "sha256-6hLw8WsNn357SJwWOWyIC4kqCzZg9VoWFCv0kiQPy+s=";
         };
     };
   };
