@@ -44,10 +44,7 @@
         mode = "viewer";
         size = "900,700";
       };
-      list = {
-        recursive = "yes";
-        all = "yes";
-      };
+      list.all = "yes";
       font.name = "JetBrainsMono Nerd Font";
     };
   };
