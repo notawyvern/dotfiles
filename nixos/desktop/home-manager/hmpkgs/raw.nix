@@ -19,7 +19,7 @@
   
       (with pkgs-unstable; [
         ruffle
-        nuclear
+        youtube-music
       ]);
     };
 }
