@@ -55,6 +55,7 @@
       anibunker = "https://anibunker.com/";
       betteranime = "https://betteranime.net/";
       weebcentral = "https://weebcentral.com/";
+      spotify = "https://listenbrainz.org/";
       youtube = "https://inv.nadeko.net/";
       mal = "https://myanimelist.net/animelist/weeabotaku";
       mangafire = "https://mangafire.to/";
