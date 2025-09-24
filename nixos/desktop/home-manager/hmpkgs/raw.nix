@@ -19,7 +19,8 @@
   
       (with pkgs-unstable; [
         ruffle
-        nuclear
+        spotube
+        yt-dlp # allows its backend for spotube
       ]);
     };
 }
