@@ -20,7 +20,6 @@
       (with pkgs-unstable; [
         ruffle
         spotube
-        yt-dlp # allows its backend for spotube
       ]);
     };
 }
