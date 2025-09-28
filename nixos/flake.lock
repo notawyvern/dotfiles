@@ -37,7 +37,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-old": {
+    "nixpkgs-hold": {
       "locked": {
         "lastModified": 1758719114,
         "narHash": "sha256-K+3LyQ5djrPY4sGPnOAlqdvj7dV23ekowzSYnJdWic0=",
@@ -73,7 +73,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-old": "nixpkgs-old",
+        "nixpkgs-hold": "nixpkgs-hold",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
