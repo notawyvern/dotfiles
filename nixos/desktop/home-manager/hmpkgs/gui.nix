@@ -1,6 +1,20 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
+  programs.sioyek = {
+    enable = true;
+    config = {
+      "font_size" = "13";
+      "status_bar_font_size" = "15";
+      "ui_font" = "DepartureMono Nerd Font";
+    };
+    bindings = {
+      toggle_dark_mode = "<C-i>";
+      next_page = "J";
+      previous_page = "K";
+    };
+
+  };
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
@@ -16,6 +30,22 @@
         primary.foreground = "#ffffff";
         primary.background = "#000000";	
       };
+    };
+  };
+
+  programs.swayimg = {
+    enable = true;
+    settings = {
+      "keys.viewer" = {
+        h = "prev_file";
+        l = "next_file";
+      };
+      general = {
+        mode = "viewer";
+        size = "900,700";
+      };
+      list.all = "yes";
+      font.name = "JetBrainsMono Nerd Font";
     };
   };
   
@@ -39,13 +69,6 @@
       useRssFeeds = true;
       useSponsorBlock = true;
     };
-  };
-
-  services.redshift = {
-    enable = true;
-    tray = true;
-    duskTime = "17:00-17:30";
-    dawnTime = "5:00-5:30";
   };
 
   programs.vscode = {
