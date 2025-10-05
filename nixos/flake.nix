@@ -33,8 +33,8 @@
         ./system/core/boot.nix
         ./system/core/users.nix
         ./system/core/pkgmgr.nix
-        
-        ./desktop/loginmgr.nix
+
+        ./desktop/lxqt.nix # enables de and login manager
 
         home-manager.nixosModules.home-manager {
 
@@ -44,12 +44,9 @@
         
           home-manager.users.crh.imports = [
             ./desktop/home-manager/home.nix # create dotfiles + enable HM
-            ./desktop/home-manager/qutebrowser.nix
+            ./desktop/home-manager/look.nix
+            ./desktop/home-manager/firefox.nix
         
-            ./desktop/home-manager/river/look.nix
-            ./desktop/home-manager/river/river-core.nix
-            ./desktop/home-manager/river/river.nix
-
             /* raw doesn't declare configurations 
             of apps, unlike the other two */
             ./desktop/home-manager/hmpkgs/raw.nix

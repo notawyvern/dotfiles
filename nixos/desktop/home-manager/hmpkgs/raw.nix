@@ -11,8 +11,6 @@
         vlc
         qalculate-gtk
         kdePackages.kolourpaint 
-        cosmic-files
-        cosmic-edit
 
       ])
           ++

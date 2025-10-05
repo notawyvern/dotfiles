@@ -10,6 +10,7 @@
   home = {
     pointerCursor = {
       enable = true;
+      size = 24;
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
