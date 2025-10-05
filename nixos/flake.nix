@@ -45,10 +45,10 @@
           home-manager.users.crh.imports = [
             ./desktop/home-manager/home.nix # create dotfiles + enable HM
             ./desktop/home-manager/qutebrowser.nix
-
-            ./desktop/home-manager/sway/look.nix
-            ./desktop/home-manager/sway/sway-core.nix
-            ./desktop/home-manager/sway/sway.nix
+        
+            ./desktop/home-manager/river/look.nix
+            ./desktop/home-manager/river/river-core.nix
+            ./desktop/home-manager/river/river.nix
 
             /* raw doesn't declare configurations 
             of apps, unlike the other two */

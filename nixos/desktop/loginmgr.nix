@@ -7,7 +7,7 @@
     settings = {
       default_session = {
         command = with pkgs;
-        ''${cage}/bin/cage -d -s -- ${greetd.gtkgreet}/bin/gtkgreet -c sway'';
+        ''${cage}/bin/cage -d -s -- ${greetd.gtkgreet}/bin/gtkgreet -c river'';
       };
     };
   };

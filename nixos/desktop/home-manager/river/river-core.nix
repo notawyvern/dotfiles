@@ -33,6 +33,25 @@
     temperature.night = 2800;
   };
 
+  # bar for river
+  programs.i3bar-river = {
+    enable = true;
+    settings = {
+      font = "DepartureMono Nerd Font 15";
+      height = 23;
+      command = "i3status";
+
+      tag_fg = "#ffffff";
+      tag_bg = "#282828ff";
+      tag_focused_bg = "#0088cc";
+      tag_focused_fg = "#ffffff";
+      tag_urgent_bg = "#ffa500";
+      tag_urgent_fg = "#ffffff";
+      tag_inactive_bg = "#333333";
+      tag_inactive_fg = "#888888";
+    };
+  };
+
   programs.i3status = {
     enable = true;
     enableDefault = false;
