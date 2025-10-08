@@ -6,6 +6,7 @@
     checkConfig = false;
     config = {
       modifier = "Mod4";
+      defaultWorkspace = "workspace number 1";
       
       output."*".bg = "~/.wallpapers/magical-land-japan.jpg stretch";
       window = {
