@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 {
-  /* a global install of sway allows 
-  gtkgreet execution before user session */
+  /* the global install prevents an attempt to 
+  use unseen features nonstop that lag sway's 
+  and gtkgreet's loading */
   programs.sway = {
     enable = true;
     extraPackages = [ ];
@@ -11,7 +12,7 @@
     text = with pkgs;
     ''
     exec "${greetd.gtkgreet}/bin/gtkgreet -l -c sway; swaymsg exit"
-    include /etc/sway/config.d/*
+#    include /etc/sway/config.d/*
     input type:touchpad { 
       tap enabled 
       }
