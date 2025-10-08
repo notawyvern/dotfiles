@@ -29,9 +29,10 @@
       };
       keybindings = {
         # basics
-        "Mod4+b" = "exec qutebrowser";
+        "Mod4+b" = "exec ${pkgs.qutebrowser}/bin/qutebrowser";
         "Mod4+t" = "exec ${pkgs.alacritty}/bin/alacritty";
         "Mod4+d" = "exec ${pkgs.tofi}/bin/tofi-drun";
+        "Mod4+f" = "fullscreen";
         "Mod4+q" = "kill";
 
         # workspaces
