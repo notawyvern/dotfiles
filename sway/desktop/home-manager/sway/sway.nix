@@ -28,12 +28,10 @@
         tap = "enabled";
       };
       keybindings = {
-        # basics
+        # launching
         "Mod4+b" = "exec ${pkgs.qutebrowser}/bin/qutebrowser";
         "Mod4+t" = "exec ${pkgs.alacritty}/bin/alacritty";
         "Mod4+d" = "exec ${pkgs.tofi}/bin/tofi-drun";
-        "Mod4+f" = "fullscreen";
-        "Mod4+q" = "kill";
 
         # workspaces
         "Mod4+1" = "workspace number 1";
@@ -73,6 +71,11 @@
         "Mod4+Shift+j" = "move down";
         "Mod4+Shift+k" = "move up";
         "Mod4+Shift+l" = "move right";
+
+        "Mod4+space" = "floating toggle";
+        "Mod4+Shift+e" = "swaymsg exit";
+        "Mod4+f" = "fullscreen";
+        "Mod4+q" = "kill";
 
         # audio
         "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
