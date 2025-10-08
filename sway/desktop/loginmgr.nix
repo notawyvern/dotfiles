@@ -12,7 +12,7 @@
     text = with pkgs;
     ''
     exec "${greetd.gtkgreet}/bin/gtkgreet -l -c sway; swaymsg exit"
-#    include /etc/sway/config.d/*
+    include /etc/sway/config.d/*
     input type:touchpad { 
       tap enabled 
       }
