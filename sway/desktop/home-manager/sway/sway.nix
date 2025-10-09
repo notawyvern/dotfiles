@@ -73,7 +73,7 @@
         "Mod4+Shift+l" = "move right";
 
         "Mod4+space" = "floating toggle";
-        "Mod4+Shift+e" = "swaymsg exit";
+        "Mod4+Shift+e" = "exec swaymsg exit";
         "Mod4+f" = "fullscreen";
         "Mod4+q" = "kill";
 
@@ -84,7 +84,7 @@
 
         # video
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
-        "XF86MonBrightnessDown" = "exec '${pkgs.brightnessctl}/bin/brightnessctl set 5%-'";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         "Print" = "exec ${pkgs.wayshot}/bin/wayshot -c -e jpg";
       };
       bars = [{
