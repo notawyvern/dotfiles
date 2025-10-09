@@ -19,7 +19,7 @@
         ];
       };
       gaps = {
-        inner = 7;
+        inner = 13;
         smartGaps = true;
         smartBorders = "on";
       };
