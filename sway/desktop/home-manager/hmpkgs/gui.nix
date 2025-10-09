@@ -45,7 +45,7 @@
         size = "900,700";
       };
       list.all = "yes";
-      font.name = "JetBrainsMono Nerd Font";
+      font.name = "DepartureMono Nerd Font";
     };
   };
   
