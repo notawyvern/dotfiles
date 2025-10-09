@@ -26,12 +26,11 @@
         xkb_layout = "br";
         tap = "enabled";
       };
-      keybindings = {
-        # basics
-        "Mod4+b" = "exec qutebrowser";
-        "Mod4+t" = "exec ${pkgs.alacritty}/bin/alacritty";
-        "Mod4+d" = "exec ${pkgs.tofi}/bin/tofi-drun";
-        "Mod4+q" = "kill";
+      keybindings = with pkgs; {
+        # launching
+        "Mod4+b" = "exec ${qutebrowser}/bin/qutebrowser";
+        "Mod4+t" = "exec ${alacritty}/bin/alacritty";
+        "Mod4+d" = "exec ${tofi}/bin/tofi-drun";
 
         # workspaces
         "Mod4+1" = "workspace number 1";
@@ -73,14 +72,14 @@
         "Mod4+Shift+l" = "move right";
 
         # audio
-        "XF86AudioRaiseVolume" = "exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
-        "XF86AudioLowerVolume" = "exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
-        "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        "XF86AudioRaiseVolume" = "exec ${wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
+        "XF86AudioLowerVolume" = "exec ${wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86AudioMute" = "exec ${wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
         # video
-        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
-        "XF86MonBrightnessDown" = "exec '${pkgs.brightnessctl}/bin/brightnessctl set 5%-'";
-        "Print" = "exec ${pkgs.wayshot}/bin/wayshot -c -e jpg";
+        "XF86MonBrightnessUp" = "exec ${brightnessctl}/bin/brightnessctl set +5%";
+        "XF86MonBrightnessDown" = "exec ${brightnessctl}/bin/brightnessctl set 5%-";
+        "Print" = "exec ${wayshot}/bin/wayshot -c -e jpg";
       };
       bars = [{
         statusCommand = "i3status";
