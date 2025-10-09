@@ -29,7 +29,6 @@
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
         "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
-        "https://block.energized.pro/ultimate/formats/hosts.txt"
         "https://adaway.org/hosts.txt"
 
         # malware
@@ -46,8 +45,8 @@
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
-      gg = "https://leta.mullvad.net/search?q={}&engine=google";
-      sp = "https://www.startpage.com/sp/search?query={}";
+      ps = "https://presearch.com/search?q={}";
+      gg = "https://www.startpage.com/sp/search?query={}";
       ddg = "https://duckduckgo.com/?q={}";
     };
     quickmarks = {
