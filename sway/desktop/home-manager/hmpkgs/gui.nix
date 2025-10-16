@@ -56,7 +56,6 @@
       autoplayVideos = false;
       hideHeaderLogo = true;
       hideLiveChat = true;
-      defaultVideoFormat = "legacy";
       hidePopularVideos = true;
       hideRecommendedVideos = true;
       hideSubscriptionsShorts = true;
