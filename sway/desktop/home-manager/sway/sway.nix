@@ -8,7 +8,7 @@
       modifier = "Mod4";
       defaultWorkspace = "workspace number 1";
       
-      output."*".bg = "~/.wallpapers/magical-land-japan.jpg stretch";
+      output."*".bg = "${config.home.homeDirectory}/.wallpapers/magical-land-japan.jpg stretch";
       window = {
         titlebar = false;
         commands = [
