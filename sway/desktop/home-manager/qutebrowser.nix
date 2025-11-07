@@ -45,8 +45,8 @@
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
-      gg = "https://leta.mullvad.net/search?q={}&engine=google";
-      sp = "https://www.startpage.com/sp/search?query={}";
+      ps = "https://presearch.com/search?q={}";
+      gg = "https://www.startpage.com/sp/search?query={}";
       ddg = "https://duckduckgo.com/?q={}";
     };
     quickmarks = {
