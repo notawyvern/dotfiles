@@ -36,6 +36,7 @@
     };
     # set some aliases, feel free to add more or remove some
     shellAliases = {
+      sudoedit = "sudo -e";
       neofetch = "fastfetch";
       vdir = "vdir --color=auto";
       dir = "dir --color=auto";
