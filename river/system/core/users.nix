@@ -7,10 +7,7 @@
     description = "crh";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  security = {
-    sudo.enable = false;
-    sudo-rs.enable = true;
-  };
+  
+  security.sudo.execWheelOnly = true;
 }
  
