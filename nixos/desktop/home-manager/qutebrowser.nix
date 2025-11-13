@@ -1,13 +1,24 @@
 { config, pkgs, ... }: 
-{ 
+
+
+  let
+    homepage = (pkgs.fetchFromGitHub
+    {
+      owner = "notawyvern";
+      repo = "tilde-enhanced";
+      rev = "8942c8d2a5336ef6e20db1cc2c8b85456241144f";
+      sha256 = "sha256-GIA/9zjlX701wrQbVpAC03s6aTKGHzQ6EBUCe461JLE=";
+    } + "/index.html");
+  in {
+
   programs.qutebrowser = { 
     enable = true; 
     settings = {
       
       # ui
       tabs.show = "multiple";
-      url.default_page = "https://html.duckduckgo.com/";
-      url.start_pages = "https://html.duckduckgo.com/";
+      url.default_page = homepage;
+      url.start_pages = homepage;
       fonts.default_family = "DepartureMono Nerd Font";
       fonts.default_size = "13pt";
 
@@ -29,7 +40,6 @@
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
         "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
         "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
-        "https://block.energized.pro/ultimate/formats/hosts.txt"
         "https://adaway.org/hosts.txt"
 
         # malware
@@ -41,13 +51,12 @@
       ];
     };
     searchEngines = {
-      DEFAULT = "https://html.duckduckgo.com/html/?q={}";
-      brave = "https://search.brave.com/search?q={}";
+      DEFAULT = "https://search.brave.com/search?q={}";
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
-      gg = "https://leta.mullvad.net/search?q={}&engine=google";
-      sp = "https://www.startpage.com/sp/search?query={}";
+      ps = "https://presearch.com/search?q={}";
+      gg = "https://www.startpage.com/sp/search?query={}";
       ddg = "https://duckduckgo.com/?q={}";
     };
     quickmarks = {
