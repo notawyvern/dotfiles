@@ -5,9 +5,9 @@
     homepage = (pkgs.fetchFromGitHub
     {
       owner = "notawyvern";
-      repo = "tilde-enhanced";
-      rev = "8942c8d2a5336ef6e20db1cc2c8b85456241144f";
-      sha256 = "sha256-GIA/9zjlX701wrQbVpAC03s6aTKGHzQ6EBUCe461JLE=";
+      repo = "Homepage";
+      rev = "bc6f8069baa7bb6b34faa04dbc4e07a8e658c68b";
+      sha256 = "sha256-DTlfvUUiMNNEU7NAQ/6VUDUwVt/ymXMebL5z6yCGdfU=";
     } + "/index.html");
   in {
 
@@ -51,7 +51,8 @@
       ];
     };
     searchEngines = {
-      DEFAULT = "https://search.brave.com/search?q={}";
+      DEFAULT = "https://html.duckduckgo.com/html/?q={}";
+      bv = "https://search.brave.com/search?q={}";
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
@@ -81,6 +82,7 @@
       # personal
       facul-uni-estacio = "https://estudante.estacio.br/login";
       github = "https://github.com/";
+      zapzap = "https://web.whatsapp.com/";
       email = "https://account.proton.me/mail";
       simplelogin = "https://app.simplelogin.io/auth/login";
       drive = "https://account.proton.me/drive";
