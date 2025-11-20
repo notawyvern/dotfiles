@@ -6,8 +6,8 @@
     {
       owner = "notawyvern";
       repo = "Homepage";
-      rev = "bc6f8069baa7bb6b34faa04dbc4e07a8e658c68b";
-      sha256 = "sha256-DTlfvUUiMNNEU7NAQ/6VUDUwVt/ymXMebL5z6yCGdfU=";
+      rev = "424e4a0faef726b043acdd1119988535daae64bb";
+      sha256 = "sha256-/+bRGkTCMWak0udMwxfr/RB1kYss7BKGsVFLRxK0aa4=";
     } + "/index.html");
   in {
 
