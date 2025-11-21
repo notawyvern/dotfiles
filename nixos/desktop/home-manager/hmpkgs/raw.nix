@@ -4,15 +4,19 @@
   home = {
     packages =
       (with pkgs; [
-        # desktop apps
+        /* desktop apps */
+
+        # core
+        qalculate-gtk
+        cosmic-files
+        cosmic-edit
+        networkmanagerapplet
+        
+        # extra
         virtualboxKvm
         upscayl
         localsend
-        haruna
-        qalculate-gtk
         kdePackages.kolourpaint 
-        cosmic-files
-        cosmic-edit
 
         # core for river wc
         brightnessctl
