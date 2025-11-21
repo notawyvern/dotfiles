@@ -15,7 +15,6 @@
         # extra
         virtualboxKvm
         upscayl
-        localsend
         kdePackages.kolourpaint 
 
         # core for river wc
