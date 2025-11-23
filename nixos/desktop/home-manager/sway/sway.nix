@@ -6,6 +6,7 @@
     checkConfig = false;
     config = {
       modifier = "Mod4";
+      defaultWorkspace = "workspace number 1";
       
       output."*".bg = "${config.home.homeDirectory}/.wallpapers/magical-land-japan.jpg stretch";
       window = {
@@ -18,7 +19,7 @@
         ];
       };
       gaps = {
-        inner = 7;
+        inner = 13;
         smartGaps = true;
         smartBorders = "on";
       };
@@ -70,6 +71,11 @@
         "Mod4+Shift+j" = "move down";
         "Mod4+Shift+k" = "move up";
         "Mod4+Shift+l" = "move right";
+
+        "Mod4+space" = "floating toggle";
+        "Mod4+Shift+e" = "exec swaymsg exit";
+        "Mod4+f" = "fullscreen";
+        "Mod4+q" = "kill";
 
         # audio
         "XF86AudioRaiseVolume" = "exec ${wireplumber}/bin/wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";

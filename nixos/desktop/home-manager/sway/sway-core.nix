@@ -24,6 +24,43 @@
     };
   };
 
+  # power menu
+  programs.wlogout = {
+    enable = true;
+    layout = with pkgs; [
+      {
+        label = "reboot";
+        action = "${systemd}/bin/systemctl reboot";
+        text = "reboot";
+      }
+      {
+        label = "reboot";
+        action = "${sway-unwrapped}/bin/swaymsg reload";
+        text = "swaymsg reload";
+      }
+      {
+        label = "shutdown";
+        action = "${systemd}/bin/systemctl poweroff";
+        text = "poweroff";
+      }
+      {
+        label = "shutdown";
+        action = "${alacritty}/bin/alacritty -e ${htop}/bin/htop";
+        text = "htop";
+      }
+      { 
+        label = "suspend";
+        action = "${systemd}/bin/systemctl suspend";
+        text = "suspend";
+      }
+      {
+        label = "logout";
+        action = "${systemd}/bin/loginctl terminate-user $USER";
+        text = "terminate-user";
+      }
+    ];
+  };
+
   # night light color temperature
   services.wlsunset = {
     enable = true;

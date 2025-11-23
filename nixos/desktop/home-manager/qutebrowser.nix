@@ -5,9 +5,9 @@
     homepage = (pkgs.fetchFromGitHub
     {
       owner = "notawyvern";
-      repo = "Homepage";
-      rev = "424e4a0faef726b043acdd1119988535daae64bb";
-      sha256 = "sha256-/+bRGkTCMWak0udMwxfr/RB1kYss7BKGsVFLRxK0aa4=";
+      repo = "startpage";
+      rev = "e13a9710a96991a858276f33baeee9be889e892d";
+      sha256 = "sha256-FeyJu2LK8QeoFmn3nhJGHMuuzGeiyd4C33P4wriWUIY=";
     } + "/index.html");
   in {
 

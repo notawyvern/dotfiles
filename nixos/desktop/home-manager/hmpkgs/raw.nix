@@ -17,17 +17,13 @@
         upscayl
         kdePackages.kolourpaint 
 
-        # core for river wc
-        brightnessctl
-        wayshot
-        swaybg
       ])
           ++
   
       (with pkgs-unstable; [
-        # more desktop apps
         ruffle
-        muffon
+        spotube
+        yt-dlp # allows its backend for spotube
       ]);
     };
 }
