@@ -13,25 +13,21 @@
         exec = with pkgs; "${alacritty}/bin/alacritty -e ${htop}/bin/htop";
         terminal = false;
       };
-      firefox = {
-        name = "hckrfox";
-        exec = "firefox --name firefox %U";
-        mimeType = [ 
-          "text/html" 
-          "text/xml" 
-          "application/xhtml+xml"
-          "application/vnd.mozilla.xul+xml"
-          "x-scheme-handler/http" 
-          "x-scheme-handler/https" 
-        ];
+      wlogout = {
+        name = "wlogout";
+        exec = with pkgs; "${wlogout}/bin/wlogout";
       };
       vim = {
         name = "Vim";
         noDisplay = true;
       };
       gvim = {
-        name = "gvim";
+        name="gvim";
         noDisplay = true;
+      };
+      cups = {
+        name="cups";
+        noDisplay = true; # hides .desktop file for non-existent printer server
       };
     };
     mimeApps = {

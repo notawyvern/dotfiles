@@ -25,7 +25,7 @@
     settings = {
       default_session = {
         command = with pkgs;
-        ''${cage}/bin/cage -d -s -- ${greetd.gtkgreet}/bin/gtkgreet -c sway'';
+        ''${sway}/bin/sway --config /etc/greetd/sway.conf'';
       };
     };
   };
