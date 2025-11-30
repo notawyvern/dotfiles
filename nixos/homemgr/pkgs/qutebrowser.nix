@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, pkgs-unstable, ... }: 
 
 
   let
@@ -12,9 +12,40 @@
   in {
 
   programs.qutebrowser = { 
-    enable = true; 
+    enable = true;
+    package = pkgs-unstable.qutebrowser;
     settings = {
       
+      # theming
+      hints.border = "#0088cc";
+      colors = {
+        prompts.bg = "black";
+        tabs = {
+          even.bg = "#313131";
+          odd.bg = "#313131";
+          selected.even.bg = "#0088cc";
+          selected.odd.bg = "#0088cc";
+        };
+        hints = {
+          bg = "#0088cc";
+          fg = "white";
+          match.fg = "orange";
+        };
+        completion = {
+          category.bg = "#151515";
+          even.bg = "black";
+          odd.bg = "black";
+          match.fg = "orange";
+          item.selected.match.fg = "orange";
+          item.selected = {
+            fg = "white";
+            bg = "#0088cc";
+            border.bottom = "#0088cc";
+            border.top = "#0088cc";
+          };
+        };
+      };
+
       # ui
       tabs.show = "multiple";
       url.default_page = homepage;
@@ -63,7 +94,7 @@
     quickmarks = {
       # fun
       anibunker = "https://anibunker.com/";
-      betteranime = "https://betteranime.net/";
+      anitube = "https://www.anitube.biz/";
       weebcentral = "https://weebcentral.com/";
       scrobble = "https://listenbrainz.org/";
       youtube = "https://inv.nadeko.net/";

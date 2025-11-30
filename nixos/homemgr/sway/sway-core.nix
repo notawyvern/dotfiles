@@ -83,7 +83,7 @@
       color_bad = "#ff2200";
     };
     modules = {
-      "wireless wlp2s0" = {
+      "wireless wlan0" = {
         position = 1;
         settings = {
           format_up = " %quality ";

@@ -76,13 +76,13 @@
     enable = true;
     package = pkgs.vscodium-fhs;
     profiles.default = { 
-      enableExtensionUpdateCheck = true;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
+        ms-ceintl.vscode-language-pack-pt-br
         github.vscode-pull-request-github
       ];
       userSettings = { 
-        "git.autofetch" = true; 
+        "git.autofetch" = true;
         "workbench.colorTheme" = "Default Light Modern";
       };
     };

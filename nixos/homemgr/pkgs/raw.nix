@@ -8,9 +8,9 @@
 
         # core
         qalculate-gtk
-        cosmic-files
         cosmic-edit
-        networkmanagerapplet
+        iwgtk
+        cosmic-files
         
         # extra
         virtualboxKvm
