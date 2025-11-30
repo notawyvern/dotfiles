@@ -27,6 +27,7 @@
   # power menu
   programs.wlogout = {
     enable = true;
+    package = null; # a sway keybinding sources the path instead
     layout = with pkgs; [
       {
         label = "reboot";
@@ -83,7 +84,7 @@
       color_bad = "#ff2200";
     };
     modules = {
-      "wireless wlp2s0" = {
+      "wireless wlan0" = {
         position = 1;
         settings = {
           format_up = " %quality ";

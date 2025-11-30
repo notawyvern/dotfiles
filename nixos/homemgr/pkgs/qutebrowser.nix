@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, pkgs-unstable, ... }: 
 
 
   let
@@ -12,9 +12,40 @@
   in {
 
   programs.qutebrowser = { 
-    enable = true; 
+    enable = true;
+    package = pkgs-unstable.qutebrowser;
     settings = {
       
+      # theming
+      hints.border = "#0088cc";
+      colors = {
+        prompts.bg = "black";
+        tabs = {
+          even.bg = "#313131";
+          odd.bg = "#313131";
+          selected.even.bg = "#0088cc";
+          selected.odd.bg = "#0088cc";
+        };
+        hints = {
+          bg = "#0088cc";
+          fg = "white";
+          match.fg = "orange";
+        };
+        completion = {
+          category.bg = "#151515";
+          even.bg = "black";
+          odd.bg = "black";
+          match.fg = "orange";
+          item.selected.match.fg = "orange";
+          item.selected = {
+            fg = "white";
+            bg = "#0088cc";
+            border.bottom = "#0088cc";
+            border.top = "#0088cc";
+          };
+        };
+      };
+
       # ui
       tabs.show = "multiple";
       url.default_page = homepage;
@@ -51,19 +82,19 @@
       ];
     };
     searchEngines = {
-      DEFAULT = "https://html.duckduckgo.com/html/?q={}";
+      DEFAULT = "https://presearch.com/search?q={}";
       bv = "https://search.brave.com/search?q={}";
       w = "https://pt.wikipedia.org/w/index.php?search={}";
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://inv.nadeko.net/search?q={}";
-      ps = "https://presearch.com/search?q={}";
       gg = "https://www.startpage.com/sp/search?query={}";
       ddg = "https://duckduckgo.com/?q={}";
     };
     quickmarks = {
       # fun
       anibunker = "https://anibunker.com/";
-      betteranime = "https://betteranime.net/";
+      anigo = "https://anigo.to/";
+      betteranime = "https://betteranime.io/";
       weebcentral = "https://weebcentral.com/";
       scrobble = "https://listenbrainz.org/";
       youtube = "https://inv.nadeko.net/";
@@ -85,7 +116,7 @@
       zapzap = "https://web.whatsapp.com/";
       email = "https://account.proton.me/mail";
       simplelogin = "https://app.simplelogin.io/auth/login";
-      drive = "https://account.proton.me/drive";
+      drive = "https://drive.proton.me/";
     };
   };
 }
