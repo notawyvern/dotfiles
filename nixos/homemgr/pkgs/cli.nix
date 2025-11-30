@@ -23,8 +23,10 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "notawyvern";
-    userEmail = "218308804+notawyvern@users.noreply.github.com";
+    settings = {
+      user.name = "notawyvern";
+      user.email = "218308804+notawyvern@users.noreply.github.com";
+    };
   };
 
   programs.bash = {
@@ -36,7 +38,6 @@
     };
     # set some aliases, feel free to add more or remove some
     shellAliases = {
-      sudoedit = "sudo -e";
       neofetch = "fastfetch";
       vdir = "vdir --color=auto";
       dir = "dir --color=auto";

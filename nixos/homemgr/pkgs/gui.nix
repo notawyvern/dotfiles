@@ -1,6 +1,74 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
+
+  /* manual configurations */
+  imports = [ ({pkgs, ...}: {
+    home.packages = (with pkgs; 
+    [ 
+      # file manager
+      cosmic-files
+
+      # desktop utils
+      cosmic-edit
+      iwgtk
+      qalculate-gtk
+
+      # media and virtualisation
+      virtualboxKvm
+      upscayl
+      vlc
+      kdePackages.kolourpaint
+    ]) ++
+    (with pkgs-unstable;
+    [ 
+      # flash player alternative
+      ruffle
+
+      # music streaming
+      spotube
+      yt-dlp # allows its backend for spotube
+    ]);
+  }) ];
+
+  xdg.configFile = {
+    cosmic-edit = {
+      target = "cosmic/com.system76.CosmicEdit/v1/vim_bindings"; force = true;
+      text = ''true'';
+    };
+    ruffle-preferences = {
+      target = "ruffle/preferences.toml";
+      text =
+        ''
+        gamemode = "on"
+        open_url_mode = "allow"
+        '';
+    };
+    ruffle-bookmarks = {
+      target = "ruffle/bookmarks.toml"; force = true;
+      text =
+        ''
+        [[bookmark]]
+        url = "https://game.aq.com/game/gamefiles/Loader3.swf"
+        name = "AQW"
+
+        [[bookmark]]
+        url = "https://play.dragonfable.com/game/DFLoader.swf"
+        name = "DragonFable"
+
+        [[bookmark]]
+        url = "https://aq.battleon.com/game/flash/Lore4652.swf"
+        name = "AdventureQuest"
+
+        [[bookmark]]
+        url = "https://play.mechquest.com/game/gamefiles/MQLoader4.swf"
+        name = "MechQuest"
+        '';
+    };
+  };
+
+  /* declared modules */
+
   programs.sioyek = {
     enable = true;
     config = {
@@ -76,13 +144,13 @@
     enable = true;
     package = pkgs.vscodium-fhs;
     profiles.default = { 
-      enableExtensionUpdateCheck = true;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
+        ms-ceintl.vscode-language-pack-pt-br
         github.vscode-pull-request-github
       ];
       userSettings = { 
-        "git.autofetch" = true; 
+        "git.autofetch" = true;
         "workbench.colorTheme" = "Default Light Modern";
       };
     };

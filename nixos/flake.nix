@@ -2,59 +2,56 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-hold.url = "github:nixos/nixpkgs/1c953094bbcc9504647555fd5eec63325f2531a1";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   
-  outputs = { self, nixpkgs, nixpkgs-hold, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
   
   let
     system = "x86_64-linux";
-    pkgs-hold = import nixpkgs-hold {inherit system;};
     pkgs-unstable = import nixpkgs-unstable 
       {inherit system; config.allowUnfree = true;};
   in {
     
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit pkgs-hold; };
       modules = [
         ./hardware-configuration.nix
 
-        ./system/extra/networking.nix
-        ./system/extra/audio.nix
-        ./system/extra/locale.nix
-        ./system/extra/swap.nix
+        ./syscore/network.nix
+        ./syscore/audio.nix
+        ./syscore/locale.nix
+        ./syscore/swap.nix 
+        ./syscore/boot.nix
+        ./syscore/users.nix
         
-        ./system/core/boot.nix
-        ./system/core/users.nix
-        ./system/core/pkgmgr.nix
-        
-        ./desktop/loginmgr.nix
+        ./syspkgs/loginmgr.nix
+        ./syspkgs/pkgmgr.nix
+        ./syspkgs/modules.nix
 
         home-manager.nixosModules.home-manager {
 
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit pkgs-unstable; inherit pkgs-hold; };
+          home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
         
           home-manager.users.crh.imports = [
-            ./desktop/home-manager/home.nix # create dotfiles + enable HM
-            ./desktop/home-manager/qutebrowser.nix
+            ./homemgr/home.nix # create dotfiles + enable HM
+            ./homemgr/look.nix
+            ./homemgr/pkgs/qutebrowser.nix
 
-            ./desktop/home-manager/sway/look.nix
-            ./desktop/home-manager/sway/sway-core.nix
-            ./desktop/home-manager/sway/sway.nix
+            ./homemgr/sway/sway-core.nix
+            ./homemgr/sway/sway.nix
 
-            /* raw doesn't declare configurations 
-            of apps, unlike the other two */
-            ./desktop/home-manager/hmpkgs/raw.nix
-            ./desktop/home-manager/hmpkgs/cli.nix
-            ./desktop/home-manager/hmpkgs/gui.nix
+            /* functional dependencies of packages may also
+            be included in cli/gui, even if they don't
+            seem to match the modular files */
+            ./homemgr/pkgs/cli.nix
+            ./homemgr/pkgs/gui.nix
 
           ];
         }

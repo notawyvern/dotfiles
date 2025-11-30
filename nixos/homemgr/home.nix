@@ -13,10 +13,6 @@
         exec = with pkgs; "${alacritty}/bin/alacritty -e ${htop}/bin/htop";
         terminal = false;
       };
-      wlogout = {
-        name = "wlogout";
-        exec = with pkgs; "${wlogout}/bin/wlogout";
-      };
       vim = {
         name = "Vim";
         noDisplay = true;
@@ -25,27 +21,31 @@
         name="gvim";
         noDisplay = true;
       };
+      pcmanfm-qt-desktop-pref = {
+        name="desktop-pref";
+        noDisplay = true;
+      };
       cups = {
         name="cups";
         noDisplay = true; # hides .desktop file for non-existent printer server
       };
     };
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "image/jpeg" = "swayimg.desktop";
-        "image/png" = "swayimg.desktop";
-      };
-      associations.added = {
-        "image/jpeg" = "swayimg.desktop";
-        "image/png" = "swayimg.desktop";
-      };
-      associations.removed = {
-        "image/png" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
-        "image/jpeg" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "image/jpeg" = "swayimg.desktop";
+          "image/png" = "swayimg.desktop";
+        };
+        associations.added = {
+          "image/jpeg" = "swayimg.desktop";
+          "image/png" = "swayimg.desktop";
+        };
+        associations.removed = {
+          "image/png" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
+          "image/jpeg" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
+        };
       };
     };
-  };
 
   # enables home manager
   programs.home-manager.enable = true;
@@ -54,5 +54,5 @@
   # it avoids breakage due to changes.
   #
   # No need to change it but, if you want to, read the release notes.
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }

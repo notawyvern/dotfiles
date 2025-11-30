@@ -5,7 +5,7 @@
   users.users.crh = {
     isNormalUser = true;
     description = "crh";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" ];
   };
   
   security = {
