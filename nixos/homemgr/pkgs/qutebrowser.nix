@@ -16,43 +16,11 @@
     package = pkgs-unstable.qutebrowser;
     settings = {
 
-      # theming
-      colors.webpage.darkmode.enabled = true; # enables darkmode
-      hints.border = "#0088cc";
-      colors = {
-        prompts.bg = "black";
-        tabs = {
-          even.bg = "#313131";
-          odd.bg = "#313131";
-          selected.even.bg = "#0088cc";
-          selected.odd.bg = "#0088cc";
-        };
-        hints = {
-          bg = "#0088cc";
-          fg = "white";
-          match.fg = "orange";
-        };
-        completion = {
-          category.bg = "#151515";
-          even.bg = "black";
-          odd.bg = "black";
-          match.fg = "orange";
-          item.selected.match.fg = "orange";
-          item.selected = {
-            fg = "white";
-            bg = "#0088cc";
-            border.bottom = "#0088cc";
-            border.top = "#0088cc";
-          };
-        };
-      };
-
       # ui
+      colors.webpage.darkmode.enabled = true;
       tabs.show = "multiple";
       url.default_page = homepage;
       url.start_pages = homepage;
-      fonts.default_family = "DepartureMono Nerd Font";
-      fonts.default_size = "13pt";
 
       # general
       content.headers.accept_language = "pt-BR,pt;q=0.9";

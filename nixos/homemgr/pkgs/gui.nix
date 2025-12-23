@@ -7,7 +7,8 @@
     home.packages = (with pkgs; 
     [ 
       # file manager
-      cosmic-files
+      lxqt.pcmanfm-qt
+      lxqt.lxqt-archiver
 
       # desktop utils
       cosmic-edit
@@ -35,6 +36,15 @@
     cosmic-edit = {
       target = "cosmic/com.system76.CosmicEdit/v1/vim_bindings"; force = true;
       text = ''true'';
+    };
+    pcmanfm-qt = {
+      target = "pcmanfm-qt/default/settings.conf"; force = true;
+      text =
+        ''
+          [System]
+          Archiver=lxqt-archiver
+          Terminal=alacritty
+        '';
     };
     ruffle-preferences = {
       target = "ruffle/preferences.toml";
@@ -74,6 +84,7 @@
     config = {
       "font_size" = "13";
       "status_bar_font_size" = "15";
+      "default_dark_mode" = "1";
       "ui_font" = "DepartureMono Nerd Font";
     };
     bindings = {
@@ -89,16 +100,7 @@
     enable = true;
     # custom settings
     settings = {
-      font = {
-        size = 16;
-          normal.family = "DepartureMono Nerd Font";
-        };
-
       selection.save_to_clipboard = true;
-      colors = {
-        primary.foreground = "#ffffff";
-        primary.background = "#000000";	
-      };
     };
   };
 
@@ -114,7 +116,6 @@
         size = "900,700";
       };
       list.all = "yes";
-      font.name = "DepartureMono Nerd Font";
     };
   };
   
@@ -149,10 +150,7 @@
         ms-ceintl.vscode-language-pack-pt-br
         github.vscode-pull-request-github
       ];
-      userSettings = { 
-        "git.autofetch" = true;
-        "workbench.colorTheme" = "Default Light Modern";
-      };
+      userSettings."git.autofetch" = true;
     };
   };
 

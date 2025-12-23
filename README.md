@@ -15,7 +15,7 @@
 
 ![Screenshot](assets/sway-desk.jpg)
 
-Organized through the power of Home Manager, flakes, and GitHub referencing, even the wallpaper is fully declarative.
+Organized through the power of Home Manager, flakes plus modules, and GitHub referencing.
 
 ![Screenshot](assets/qutebrowser.jpg)
 
@@ -33,7 +33,7 @@ Make sure your system is pointing to its EFI file in order to boot. You can do s
 
 ### How to Change the Wallpaper?
 
-The file [sway.nix](./nixos/pkgs/hmpkgs/desktop/sway/sway.nix) references it. You could just change the line. The built-in one checks in the ~/.wallpapers folder, which will be generated if you rebuild NixOS. It fetches my wallpaper repo from GitHub and copies some really nice images to the /nix/store. I'd suggest to take a look.
+The file [stylix.nix](./nixos/syspkgs/stylix.nix) references it. So change the line. The built-in code fetches my wallpaper repo and copies some really nice images to the /nix/store. If you're interested, [take a look](https://github.com/notawyvern/wallpapers).
 
 ### What Keybindings should I Know?
 

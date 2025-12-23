@@ -40,10 +40,6 @@
           "image/jpeg" = "swayimg.desktop";
           "image/png" = "swayimg.desktop";
         };
-        associations.removed = {
-          "image/png" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
-          "image/jpeg" = [ "org.kde.kolourpaint.desktop" "org.qutebrowser.qutebrowser.desktop" ];
-        };
       };
     };
 

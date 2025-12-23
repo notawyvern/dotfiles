@@ -3,6 +3,8 @@
   # trash for file manager
   services.gvfs.enable = true;
 
+  programs.dconf.enable = true;
+
   /* disable the nscd service,
   aimed at servers and not desktops */
   services.nscd.enable = false;

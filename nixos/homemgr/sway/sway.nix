@@ -2,13 +2,17 @@
 
 {
   wayland.windowManager.sway = {
+    systemd.enable = true;
     enable = true;
     checkConfig = false;
     config = {
+      # the systemctl ... command restarts waybar every time sway is reloaded,
+      # while the systemd integration does the same upon system rebuilds.
+      bars = [];
+      startup = [ {command = "systemctl --user restart waybar.service"; always = true;} ];
+
       modifier = "Mod4";
       defaultWorkspace = "workspace number 1";
-      
-      output."*".bg = "${config.home.homeDirectory}/.wallpapers/magical-land-japan.jpg stretch";
       window = {
         titlebar = false;
         commands = [
@@ -92,16 +96,6 @@
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         "Print" = "exec ${pkgs.wayshot}/bin/wayshot -c -e jpg";
       };
-      bars = [{
-        statusCommand = "i3status";
-        position = "top";
-        fonts =
-          {
-            names = [ "DepartureMono Nerd Font" ];
-            style = "Regular";
-            size = 15.0;
-          };
-          }];
-          };
-        };
+    };
+    };
 }

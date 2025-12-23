@@ -5,22 +5,10 @@
   programs.tofi = {
     enable = true;
     settings = {
-      width = "100%";
-      height = "100%";
       history = false;
-      border-width = 0;
-      outline-width = 0;
-      horizontal = true;
       prompt-text = ''" "'';
-      padding-top = "5%";
       hide-cursor = true;
-      result-spacing = 15;
-      num-results = 0;
-      font-size = 24;
-      font = "DepartureMono Nerd Font";
       drun-launch = true;
-      selection-color = "#0088cc";
-      background-color = "#000A";
     };
   };
 
@@ -71,61 +59,41 @@
     temperature.night = 2800;
   };
 
-  programs.i3status = {
+  programs.waybar = {
+    systemd.enable = true;
     enable = true;
-    enableDefault = false;
-    general = {
-      separator = "";
-      output_format = "i3bar";
-      colors = true;
-      interval = 5;
-      color_good = "#aaff00";
-      color_degraded = "#ffa500";
-      color_bad = "#ff2200";
-    };
-    modules = {
-      "wireless wlan0" = {
-        position = 1;
-        settings = {
-          format_up = " %quality ";
-          format_down = "";
-          };
+    settings = {
+      bar = {
+        position = "top";
+
+        modules-left = [ "sway/workspaces" ];
+        modules-center = [ "sway/window" ];
+        modules-right = [ "network" "battery" "pulseaudio" "clock" ];
+
+        "sway/window".tooltip = false;
+
+        "network" = {
+          format = "{ifname}";
+          format-wifi = " {signalStrength}%";
+          tooltip = false;
         };
-      "battery 1" = {
-        position = 2;
-        settings = {
-          format = "%status %percentage";
-          format_down = "";
-          last_full_capacity = true;
-          integer_battery_capacity = true;
-          low_threshold = 40;
-          threshold_type = "percentage";
-          status_chr = "󰂏";
-          status_bat = "󰂌";
-          status_full = "󰁹";
+
+        "battery" = {
+          format = "{icon} {capacity}%";
+          format-icons = ["" "" "" "" ""];
         };
-      };
-      "volume master" = {
-        position = 3;
-        settings = {
-          format = " 󰝚 %volume";
-          format_muted = " 󰝛 %volume";
-          device = "default";
-          mixer = "Master";
-          mixer_idx = 0;
+
+        "pulseaudio" = {
+          format = " {volume}%";
+          format-bluetooth = " {volume}%";
+          format-muted = "";
         };
-      };
-      "tztime localdate" = {
-        position = 4;
-        settings = {
-          format = "  %d/%m/%Y";
+
+        "clock" = {
+          format = " {:%d/%m/%Y %H:%Mh}";
+          tooltip = false;
         };
-      };
-      "tztime localtime" = {
-        position = 5;
-        settings = {
-          format = "  %H:%Mh ";
-        };
+
       };
     };
   };

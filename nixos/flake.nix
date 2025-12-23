@@ -7,9 +7,12 @@
     
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:nix-community/stylix/release-25.11";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
   
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, stylix, home-manager }:
   
   let
     system = "x86_64-linux";
@@ -20,6 +23,7 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        stylix.nixosModules.stylix
         ./hardware-configuration.nix
 
         ./syscore/network.nix
@@ -32,6 +36,7 @@
         ./syspkgs/loginmgr.nix
         ./syspkgs/pkgmgr.nix
         ./syspkgs/modules.nix
+        ./syspkgs/stylix.nix
 
         home-manager.nixosModules.home-manager {
 
@@ -41,7 +46,7 @@
         
           home-manager.users.crh.imports = [
             ./homemgr/home.nix # create dotfiles + enable HM
-            ./homemgr/look.nix
+#            ./homemgr/look.nix
             ./homemgr/pkgs/qutebrowser.nix
 
             ./homemgr/sway/sway-core.nix
