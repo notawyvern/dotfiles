@@ -59,41 +59,58 @@
     temperature.night = 2800;
   };
 
-  programs.waybar = {
-    systemd.enable = true;
+  programs.i3status = {
     enable = true;
-    settings = {
-      bar = {
-        position = "top";
-
-        modules-left = [ "sway/workspaces" ];
-        modules-center = [ "sway/window" ];
-        modules-right = [ "network" "battery" "pulseaudio" "clock" ];
-
-        "sway/window".tooltip = false;
-
-        "network" = {
-          format = "{ifname}";
-          format-wifi = " {signalStrength}%";
-          tooltip = false;
+    enableDefault = false;
+    general = {
+      separator = "";
+      output_format = "i3bar";
+      colors = true;
+      interval = 5;
+    };
+    modules = {
+      "wireless wlan0" = {
+        position = 1;
+        settings = {
+          format_up = " %quality ";
+          format_down = "";
+          };
         };
-
-        "battery" = {
-          format = "{icon} {capacity}%";
-          format-icons = ["" "" "" "" ""];
+      "battery 1" = {
+        position = 2;
+        settings = {
+          format = "%status %percentage";
+          format_down = "";
+          last_full_capacity = true;
+          integer_battery_capacity = true;
+          low_threshold = 40;
+          threshold_type = "percentage";
+          status_chr = "󰂏";
+          status_bat = "󰂌";
+          status_full = "󰁹";
         };
-
-        "pulseaudio" = {
-          format = " {volume}%";
-          format-bluetooth = " {volume}%";
-          format-muted = "";
+      };
+      "volume master" = {
+        position = 3;
+        settings = {
+          format = " 󰝚 %volume";
+          format_muted = " 󰝛 %volume";
+          device = "default";
+          mixer = "Master";
+          mixer_idx = 0;
         };
-
-        "clock" = {
-          format = " {:%d/%m/%Y %H:%Mh}";
-          tooltip = false;
+      };
+      "tztime localdate" = {
+        position = 4;
+        settings = {
+          format = "  %d/%m/%Y";
         };
-
+      };
+      "tztime localtime" = {
+        position = 5;
+        settings = {
+          format = "  %H:%Mh ";
+        };
       };
     };
   };

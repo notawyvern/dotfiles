@@ -2,15 +2,13 @@
 
 {
   wayland.windowManager.sway = {
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      dbusImplementation = "broker";
+    };
     enable = true;
     checkConfig = false;
     config = {
-      # the systemctl ... command restarts waybar every time sway is reloaded,
-      # while the systemd integration does the same upon system rebuilds.
-      bars = [];
-      startup = [ {command = "systemctl --user restart waybar.service"; always = true;} ];
-
       modifier = "Mod4";
       defaultWorkspace = "workspace number 1";
       window = {
@@ -96,6 +94,14 @@
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
         "Print" = "exec ${pkgs.wayshot}/bin/wayshot -c -e jpg";
       };
+      
+      bars = [(
+        { 
+          statusCommand = "i3status";
+          position = "top";
+        }
+        // config.stylix.targets.sway.exportedBarConfig
+      )];
     };
     };
 }

@@ -46,7 +46,6 @@
         
           home-manager.users.crh.imports = [
             ./homemgr/home.nix # create dotfiles + enable HM
-#            ./homemgr/look.nix
             ./homemgr/pkgs/qutebrowser.nix
 
             ./homemgr/sway/sway-core.nix

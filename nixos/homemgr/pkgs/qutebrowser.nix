@@ -5,9 +5,9 @@
     homepage = (pkgs.fetchFromGitHub
     {
       owner = "notawyvern";
-      repo = "startpage";
-      rev = "e13a9710a96991a858276f33baeee9be889e892d";
-      sha256 = "sha256-FeyJu2LK8QeoFmn3nhJGHMuuzGeiyd4C33P4wriWUIY=";
+      repo = "search";
+      rev = "b9edf5df8530ead56f24ffdd55ee7ca7c98e6dd6";
+      sha256 = "sha256-KmSorO+FT7z4RfS99ZD66NoQwIEC2HPh9ZzEyyhxdLU=";
     } + "/index.html");
   in {
 
@@ -24,6 +24,7 @@
 
       # general
       content.headers.accept_language = "pt-BR,pt;q=0.9";
+      content.local_content_can_access_remote_urls = true; # so the homepage's search works
 
       content.blocking.adblock.lists = [
         # basics

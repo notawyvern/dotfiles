@@ -5,6 +5,8 @@
 
   programs.dconf.enable = true;
 
+  services.dbus.implementation = "dbus";
+
   /* disable the nscd service,
   aimed at servers and not desktops */
   services.nscd.enable = false;
