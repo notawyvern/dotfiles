@@ -20,7 +20,6 @@
     };
   };
 
-  # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     settings = {
@@ -29,25 +28,29 @@
     };
   };
 
-  programs.zsh = {
+  programs.bash = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion = {
-      enable = true;
-      strategy = [ "history" ];
+    bashrcExtra = # to call ps1 in all sessions it must be here
+      ''
+        export PS1="\[\e]0;\u@\h: \w\a\]\[\033[1;32m\][\s \V \w]\$\[\033[0m\] "
+        set -o vi
+        bind -m vi-command 'Control-l: clear-screen'
+        bind -m vi-insert 'Control-l: clear-screen'
+        bind -m vi-insert 'set completion-ignore-case on'
+      '';
+  };
+
+  programs.fish = {
+    enable = true;
+    binds = {
+        "ctrl-e --mode insert".command = "accept-autosuggestion";
     };
-    completionInit = "autoload -U compinit && compinit -C && bindkey '^E' end-of-line";
-    defaultKeymap = "viins";
-    shellAliases = {
-      neofetch = "fastfetch";
-      ls = "ls --color=auto";
-      vdir = "vdir --color=auto";
-      dir = "dir --color=auto";
+    functions = {
+      fish_greeting = ""; fish_mode_prompt = "";
+      fish_user_key_bindings = "fish_vi_key_bindings default";
+      fish_prompt = "echo -s ''(set_color --bold green) [$USER@$hostname:$PWD]'$ '";
     };
-    setOptions = [ "nocaseglob" ];
-    sessionVariables = {
-      PROMPT="%F{green}%B[%n@%b%f%k%F{green}%B%m:%b%f%k%F{green}%B%~]%b%f%k ";
-    };
+    shellAliases.neofetch = "fastfetch";
   };
 
   programs.vim = {

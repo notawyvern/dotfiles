@@ -19,7 +19,7 @@ Organized through the power of Home Manager, flakes plus modules, and GitHub ref
 
 ![Screenshot](assets/qutebrowser.jpg)
 
-Personal quickmarks are declared. The [startpage](https://github.com/notawyvern/startpage) is too and refers to a repository itself. Home Manager allows deep tweaking into apps, both on CLI and GUI. Vi mode on Zsh is enabled by default. And these things are just the tip of the iceberg.
+Personal quickmarks are declared. The [startpage](https://github.com/notawyvern/search) is too and refers to a repository itself. Home Manager allows deep tweaking into apps, both on CLI and GUI. Vi mode on fish is enabled by default. And these things are just the tip of the iceberg.
 
 ## Questions & Answers
 
@@ -64,7 +64,7 @@ The directory [pkgs](./nixos/homemgr/pkgs) contain mostly software I find non-es
 - VirtualBox
 - Vim
 - htop
-- Zsh (as in Home Manager)
+- fish + bash (as in Home Manager)
 - git
 - Qalculate!'s GTK version
 - featherpad
