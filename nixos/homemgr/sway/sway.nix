@@ -112,13 +112,6 @@
         }
         // config.stylix.targets.sway.exportedBarConfig
         )];
-        startup = with pkgs; [
-          {
-            # workaround for services not restarting after ly exit
-            command = ''${systemd}/bin/systemctl --user restart "*".target'';
-            always = true;
-          }
-        ];
     };
     };
 }

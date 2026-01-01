@@ -98,13 +98,12 @@
 
   };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
+  # options in https://alacritty.org/config-alacritty.html
   programs.alacritty = {
     enable = true;
-    # custom settings
     settings = {
+      env.SHELL = "${pkgs.fish}/bin/fish";
       selection.save_to_clipboard = true;
-      terminal.shell.program = "${pkgs.zsh}/bin/zsh";
     };
   };
 
