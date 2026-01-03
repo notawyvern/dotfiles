@@ -102,7 +102,10 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      env.SHELL = "${pkgs.fish}/bin/fish";
+      terminal.shell = {
+        program = "${pkgs.bash}/bin/bash";
+        args = [ "-l" ]; # session variables need the -l flag
+      };
       selection.save_to_clipboard = true;
     };
   };

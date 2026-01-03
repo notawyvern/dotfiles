@@ -1,40 +1,31 @@
 { config, pkgs, ... }:
 {
-  programs.sway = with config.stylix; {
+  services.displayManager.sessionPackages = [ pkgs.sway ];
+  programs.sway = with pkgs; {
     enable = true; # installs required files for compositing
-    extraPackages = [ cursor.package ]; # needed for cursor theming
+    extraPackages = [ kdePackages.breeze-icons adwaita-icon-theme adw-gtk3 ]; # needed for theming
     package = null;
   };
 
   environment.etc = {
-    "greetd/environments" = with pkgs; {
-      text = "${sway-unwrapped}/bin/sway";
-      mode = "444";
-    };
-    "gtkgreet/style.css" = with config.stylix; {
+    "greetd/regreet.toml" = with config.stylix; {
       text = 
-      ''  
-        window {
-        background: url("file://${image}") center / cover no-repeat;
-        }
-        
-        box#body, entry, menu {
-        color: ${if (polarity == "dark") then "#ffffff;" else "#000000;"}
-        background-color: ${if (polarity == "dark") then "#131721;" else "#fffafa;"}
-        }
+        ''
+          [background]
+          path = "${image}"
+          fit = "Fill"
 
-        box#body {
-        border-radius: 10px;
-        padding: 50px;
-        }
-      '';
-      mode = "444";
+          [GTK]
+          application_prefer_dark_theme = ${if (polarity == "dark") then "true" else "false"}
+          icon_theme_name = ${if (polarity == "dark") then ''"breeze-dark"'' else ''"breeze"'' }
+          theme_name = ${if (polarity == "dark") then ''"adw-gtk3-dark"'' else ''"adw-gtk3"'' }
+        '';
+        mode = "444";
     };
-    "gtkgreet/compose.conf" = {
+    "regreet/compose.conf" = {
       text =
         ''
-          exec "${pkgs.gtkgreet}/bin/gtkgreet -l -s /etc/gtkgreet/style.css; \
-          ${pkgs.sway-unwrapped}/bin/swaymsg exit"
+          exec "${pkgs.regreet}/bin/regreet; ${pkgs.sway-unwrapped}/bin/swaymsg exit"
 
           input "*" {
           xkb_layout br
@@ -55,7 +46,7 @@
     restart = true;
     settings = with pkgs; {
       default_session = {
-        command = "${sway-unwrapped}/bin/sway -c /etc/gtkgreet/compose.conf";
+        command = "${sway-unwrapped}/bin/sway -c /etc/regreet/compose.conf";
       };
     };
   };
