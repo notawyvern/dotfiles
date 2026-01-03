@@ -1,40 +1,15 @@
 { config, pkgs, ... }:
 {
-  programs.sway = with config.stylix; {
-    enable = true; # installs required files for compositing
-    extraPackages = [ cursor.package ]; # needed for cursor theming
-    package = null;
-  };
+  # the sway module declares configuration, the users one theming resources
+  users.users.greeter.packages = [ config.stylix.cursor.package pkgs.adw-gtk3 ];
+  programs.sway = { enable = true; package = null; extraPackages = []; };
 
   environment.etc = {
-    "greetd/environments" = with pkgs; {
-      text = "${sway-unwrapped}/bin/sway";
-      mode = "444";
-    };
-    "gtkgreet/style.css" = with config.stylix; {
-      text = 
-      ''  
-        window {
-        background: url("file://${image}") center / cover no-repeat;
-        }
-        
-        box#body, entry, menu {
-        color: ${if (polarity == "dark") then "#ffffff;" else "#000000;"}
-        background-color: ${if (polarity == "dark") then "#131721;" else "#fffafa;"}
-        }
-
-        box#body {
-        border-radius: 10px;
-        padding: 50px;
-        }
-      '';
-      mode = "444";
-    };
-    "gtkgreet/compose.conf" = {
+    "greetd/environments" = { text = "${pkgs.sway-unwrapped}/bin/sway"; };
+    "greetd/compose.conf" = {
       text =
         ''
-          exec "${pkgs.gtkgreet}/bin/gtkgreet -l -s /etc/gtkgreet/style.css; \
-          ${pkgs.sway-unwrapped}/bin/swaymsg exit"
+          exec "${pkgs.gtkgreet}/bin/gtkgreet -l; ${pkgs.sway-unwrapped}/bin/swaymsg exit"
 
           input "*" {
           xkb_layout br
@@ -46,16 +21,19 @@
 
           include /etc/sway/config.d/*
         '';
-      mode = "444";
+      };
     };
-  };
 
   services.greetd = {
     enable = true;
     restart = true;
-    settings = with pkgs; {
+    settings = {
       default_session = {
-        command = "${sway-unwrapped}/bin/sway -c /etc/gtkgreet/compose.conf";
+        command = 
+          ''
+          ${pkgs.coreutils}/bin/env GTK_THEME=${if (config.stylix.polarity == "dark") then ''"adw-gtk3-dark"'' else ''"adw-gtk3"''} \
+          ${pkgs.sway-unwrapped}/bin/sway -c /etc/greetd/compose.conf
+          '';
       };
     };
   };

@@ -19,7 +19,7 @@ Organized through the power of Home Manager, flakes plus modules, and GitHub ref
 
 ![Screenshot](assets/qutebrowser.jpg)
 
-Personal quickmarks are declared. The [startpage](https://github.com/notawyvern/search) is too and refers to a repository itself. Home Manager allows deep tweaking into apps, both on CLI and GUI. Vi mode on fish is enabled by default. And these things are just the tip of the iceberg.
+Personal quickmarks are declared. The [startpage](https://github.com/notawyvern/search) is too and refers to a repository itself. Home Manager allows deep tweaking into apps, both on CLI and GUI. Vi mode on Bash is enabled by default. And these things are just the tip of the iceberg.
 
 ## Questions & Answers
 
@@ -54,17 +54,15 @@ The majority of the packages are declared in [homemgr](./nixos/homemgr) and [sys
 The directory [pkgs](./nixos/homemgr/pkgs) contain mostly software I find non-essential. Though it still has a few important ones. They are the following:
 
 - FreeTube
-- vlc
+- haruna
 - VSCodium
 - fastfetch
 - ruffle
 - KolourPaint
 - Spotube + ytdlp
-- Upscayl
-- VirtualBox
 - Vim
 - htop
-- fish + bash (as in Home Manager)
+- Bash (as in Home Manager)
 - git
 - Qalculate!'s GTK version
 - featherpad

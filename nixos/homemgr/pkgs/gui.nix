@@ -16,9 +16,7 @@
       qalculate-gtk
 
       # media and virtualisation
-      virtualboxKvm
-      upscayl
-      vlc
+      haruna
       kdePackages.kolourpaint
     ]) ++
     (with pkgs-unstable;
@@ -33,6 +31,10 @@
   }) ];
 
   xdg.configFile = {
+    haruna = {
+      target = "haruna/haruna.conf"; force = true;
+      text = "[General]"+"\n"+"ShowHeader=false";
+    };
     featherpad = {
       target = "featherpad/fp.conf"; force = true;
       text = with config.stylix;
@@ -102,7 +104,10 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      env.SHELL = "${pkgs.fish}/bin/fish";
+      terminal.shell = {
+        program = "${pkgs.bash}/bin/bash";
+        args = [ "-l" ]; # session variables need the -l flag
+      };
       selection.save_to_clipboard = true;
     };
   };
